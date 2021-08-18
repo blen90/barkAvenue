@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Shadows Into Light', cursive;
+    color: black;
+  }
+  
+  .App {
+    text-align: center;
+  }
+  .LinkList {
+    color: rgb(155, 29, 29);
+    padding: 0px 10px 0px 10px;
+    border-right: 1px solid black;
+    font-size:1.25rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .active{
+    color: rgb(40, 25, 177);
+    font-weight: bold;
+    text-decoration: underline;
+  }  
+  
+  .footer {
+    background-color: rgb(39, 12, 12);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .footer h4{
+    color: white;
+  }
+  
