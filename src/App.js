@@ -9,7 +9,8 @@ import Login from './pages/Login/Login.js';
 import Profile from './pages/Profile/Profile';
 import Services from './pages/Services/Services.js';
 import Signup from './pages/Signup/Signup.js';
-import Contact from './pages/Contact/Contact.js'
+import Contact from './pages/Contact/Contact.js';
+import Reservation from './pages/Reservation/Reservation.js'
 
 import Footer from './pages/components/Footer';
 import Header from './pages/components/Header.js';
@@ -25,10 +26,12 @@ class App extends Component {
           <div className="container">
              <Switch>
               {/* <Route exact path="/" component={About} /> */}
+              <Route exact path="/" component={About} />
+              <Route exact path="/Services" component={Services} />
               <Route exact path="/About" component={About} />
               <Route exact path="/Checkout" component={Checkout} />
               <Route exact path="/Profile" component={Profile} />
-              <Route exact path="/Services" component={Services} />
+              <Route exact path="/Reservation" component={Reservation} />
               <Route exact path="/Contact" component={Contact} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Signup" component={Signup} /> 
