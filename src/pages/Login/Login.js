@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { validateEmail } from '../../utils/helpers';
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import './Login.css';
 
@@ -15,7 +16,7 @@ const Login = (props) => {
     //Set the state to username and password based on the input type,
     if (inputType === "userName") {
       setUserName(inputValue);
-    } else (inputType === "password") {
+    } else {
       setPassword(inputValue);
     } 
   };

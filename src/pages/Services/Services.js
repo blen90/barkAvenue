@@ -1,7 +1,7 @@
 import React from 'react';
-import Card from '..components/Card';
+import Card from '../components/Card';
 
-const Services = [
+const services = [
   {
     name: 'Basic Pawsome Stay ',
     image: <img src="/assets/images/furry.jpg" alt="landing page" className="landing_page"></img>,
