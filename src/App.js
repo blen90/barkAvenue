@@ -9,6 +9,7 @@ import Login from './pages/Login/Login.js';
 import Profile from './pages/Profile/Profile';
 import Services from './pages/Services/Services.js';
 import Signup from './pages/Signup/Signup.js';
+import Contact from './pages/Contact/Contact.js'
 
 import Footer from './pages/components/Footer';
 import Header from './pages/components/Header.js';
@@ -28,6 +29,7 @@ class App extends Component {
               <Route exact path="/Checkout" component={Checkout} />
               <Route exact path="/Profile" component={Profile} />
               <Route exact path="/Services" component={Services} />
+              <Route exact path="/Contact" component={Contact} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/Signup" component={Signup} /> 
             </Switch>
