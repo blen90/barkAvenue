@@ -1,70 +1,33 @@
 import React from 'react';
-import '../components/style.css';
-
-
-function NavTabs({ currentPage, handlePageChange }) {
+import { Nav } from 'reactstrap';
+import { NavLink } from "react-router-dom"
+const NavTabs = () => {
   return (
-
-    <ul className="nav nav-tabs justify-content-end" >
-      <li className="nav-item">
-        <a
-          href="#about"
-          onClick={() => handlePageChange('About')}
-          className={currentPage === 'About' ? 'nav-link active' : 'nav-link'}>
+    <div className="NavBar">
+      <Nav >
+        <NavLink className="LinkList" activeClassName="active" to="/about">
           About
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#services"
-          onClick={() => handlePageChange('Services')}
-          className={currentPage === 'Services' ? 'nav-link active' : 'nav-link'}>
+        </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/services">
           Services
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#profile"
-          onClick={() => handlePageChange('Profile')}
-          className={currentPage === 'Profile' ? 'nav-link active' : 'nav-link'}>
+        </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/profile">
           Profile
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#reservation"
-          onClick={() => handlePageChange('Reservation')}
-          className={currentPage === 'Reservation' ? 'nav-link active' : 'nav-link'}>
+        </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/reservation">
           Reservation
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#contact"
-          onClick={() => handlePageChange('Contact')}
-          className={currentPage === 'Contact' ? 'nav-link active' : 'nav-link'}>
+        </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/contact">
           Contact
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#login"
-          onClick={() => handlePageChange('Login')}
-          className={currentPage === 'Login' ? 'nav-link active' : 'nav-link'}>
+        </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/login">
           Login
-        </a>
-      </li>
-      <li className="nav-item">
-        <a
-          href="#signup"
-          onClick={() => handlePageChange('Signup')}
-          className={currentPage === 'Signup' ? 'nav-link active' : 'nav-link'}>
+        </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/signup">
           Signup
-        </a>
-      </li>
-    </ul>
-
+        </NavLink>
+      </Nav>
+    </div>
   );
 }
-
 export default NavTabs;
