@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Checkout from './pages/Checkout';
-import Login from './pages/Login';
-import Profile from './pages/Profile';
-import Services from './pages/Services';
-import Signup from './pages/Signup';
+
+import About from './pages/About/About';
+import Checkout from './pages/Checkout/Checkout';
+import Login from './pages/Login/Login';
+import Profile from './pages/Profile/Profile';
+import Services from './pages/Services/Services';
+import Signup from './pages/Signup/Signup';
 
 import Footer from './pages/components/Footer';
 import Header from './pages/components/Header';
@@ -23,9 +23,6 @@ function App() {
           <Nav />
           <div className="container">
             <Route exact path="/">
-              <Home />
-            </Route>
-            <Route exact path="/About">
               <About />
             </Route>
             <Route exact path="/Checkout">
