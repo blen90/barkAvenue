@@ -1,90 +1,40 @@
-import React, { useState } from "react";
-import { validateEmail } from "../../utils/helpers";
+import React from 'react';
+import emailjs from 'emailjs-com';
+
 
 export default function Contact() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const handleInputChange = (e) => {
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
 
-    if (inputType === "name") {
-      setName(inputValue);
-    } else if (inputType === "email") {
-      setEmail(inputValue);
-    } else {
-      setMessage(inputValue);
-    }
-  };
-  const handleInputBlur = (e) => {
-    if (!e.target.value.length) {
-      setErrorMessage(`${e.target.name} is required`);
-    } else {
-      setErrorMessage("");
-    }
-  };
-  const handleFormSubmit = (e) => {
+  function sendEmail(e) {
     e.preventDefault();
-    if (!validateEmail(email)) {
-      setErrorMessage("I need a real email yo.");
-      return;
-    } else if (!name.length || !email.length || !message.length) {
-      setErrorMessage("Gotta fill out all fields yo.");
-      return;
-    }
-    setName("");
-    setEmail("");
-    setMessage("");
-  };
+
+    emailjs.sendForm('service_mxb2e23', 'template_twwgk7d', e.target, 'user_j4vKKqMNY4xCOIUz7layV')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    e.target.reset()
+    alert("Message sent!")
+  }
+
   return (
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-8">
-          <form className="contactform">
-            <p>
-              If you would like contact me! Please leave your name, email and
-              your message!{" "}
-            </p>
-            <input
-              className="form-control name"
-              value={name}
-              name="name"
-              onChange={handleInputChange}
-              onBlur={handleInputBlur}
-              type="text"
-              placeholder="name"
-            />
-            <input
-              className="form-control email"
-              value={email}
-              name="email"
-              onChange={handleInputChange}
-              onBlur={handleInputBlur}
-              type="email"
-              placeholder="email"
-            />
-            <textarea
-              className="form-control message"
-              value={message}
-              name="message"
-              onChange={handleInputChange}
-              onBlur={handleInputBlur}
-              type="textbox"
-              placeholder="your message"
-            />
-            <button type="button" onClick={handleFormSubmit}>
-              Submit
-            </button>
-          </form>
-          {errorMessage && (
-            <div>
-              <p className="error-text">{errorMessage}</p>
-            </div>
-          )}
-        </div>
+    <div className="form col-12-lg col-6-md col-3-sm text-center">
+      <div className="form-container">
+        <h2 className="title"> Howl you doin'? Leave your information with a message and we will collie you later </h2>
+        <br></br>
+        <form className="contact-form col-8 pt-2 mx-auto" onSubmit={sendEmail}>
+          <input type="hidden" name="contact_number" />
+          <li>
+            <input type="text" className="form-name" name="user_name" placeholder="Name" />
+          </li>
+          <li>
+            <input type="text" className="form-email" name="user_email" placeholder="Email" />
+          </li>
+          <li>
+            <textarea type="text" className="form-message" name="message" placeholder="Message" />
+          </li>
+          <input className="submit-button btn-primary" type="submit" value="Send" />
+        </form>
       </div>
     </div>
   );
