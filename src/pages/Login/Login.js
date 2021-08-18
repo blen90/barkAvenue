@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { validateEmail } from '../../utils/helpers';
+// import { validateEmail } from '../../utils/helpers';
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import './Login.css';
 
@@ -21,15 +21,15 @@ const Login = (props) => {
     } 
   };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (!validateEmail(userName) ||!validateEmail(userName))  {
-      setErrorMessage(" Wrong User Name or Password");
-      return;
-    }
-    setUserName("");
-    setPassword("");
-  };
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!validateEmail(userName) ||!validateEmail(userName))  {
+  //     setErrorMessage(" Wrong User Name or Password");
+  //     return;
+  //   }
+  //   setUserName("");
+  //   setPassword("");
+  // };
 
   return (
     <Form className="contact">
