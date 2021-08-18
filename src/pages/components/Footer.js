@@ -1,6 +1,8 @@
 export default function Footer() {
-    return (
-        <h1>Hello</h1>
-
-    );
+  return (
+    <div className="footer">
+        <h1>Some Text Here</h1>
+    </div>
+  
+  );
 }
