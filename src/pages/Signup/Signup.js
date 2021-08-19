@@ -1,61 +1,110 @@
-import React from 'react';
-import { Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import React, { useState } from 'react';
+import { Form, Button, Alert } from 'reactstrap';
 
-const Signup = (props) => {
+import { createUser } from '../../utils/API';
+import Auth from '../../utils/auth';
+
+const SignupForm = () => {
+  // set initial form state
+  const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
+  // set state for form validation
+  const [validated] = useState(false);
+  // set state for alert
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    try {
+      const response = await createUser(userFormData);
+
+      if (!response.ok) {
+        throw new Error('something went wrong!');
+      }
+
+      const { token, user } = await response.json();
+      console.log(user);
+      Auth.login(token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
+  };
+
   return (
-    <Form>
-      <FormGroup row>
-        <Label for="exampleEmail" sm={2}>Email</Label>
-        <Col sm={10}>
-          <Input type="email" name="email" id="exampleEmail" placeholder="" />
-        </Col>
-      </FormGroup>
-      <FormGroup row>
-        <Label for="examplePassword" sm={2}>Password</Label>
-        <Col sm={10}>
-          <Input type="password" name="password" id="examplePassword" placeholder="******" />
-        </Col>
-      </FormGroup>
-	  <FormGroup row>
-        <Label for="userName" sm={2}>Username</Label>
-        <Col sm={10}>
-          <Input type="userName" name="userName" id="userName" placeholder="" />
-        </Col>
-      </FormGroup>
-	  <FormGroup row>
-        <Label for="petName" sm={2}>Pet Name</Label>
-        <Col sm={10}>
-          <Input type="petName" name="petName" id="petName" placeholder="" />
-        </Col>
-      </FormGroup>
-	  <FormGroup row>
-        <Label for="petBreed" sm={2}>Pet Breed</Label>
-        <Col sm={10}>
-          <Input type="petBreed" name="petBreed" id="petBreed" placeholder="" />
-        </Col>
-      </FormGroup>
-      <FormGroup tag="fieldset" row>
-        <legend className="col-form-label col-sm-2">Gender of pet:</legend>
-        <Col sm={10}>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio2" />{' '}
-              Male
-            </Label>
-          </FormGroup>
-          <FormGroup check>
-            <Label check>
-              <Input type="radio" name="radio2" />{' '}
-              Female
-            </Label>
-          </FormGroup>
-        </Col>
-      </FormGroup>
-      <FormGroup check row>
-	  	<Button className="sub"> Submit </Button>
-      </FormGroup>
-    </Form>
-  );
-}
+    <>
+      {/* This is needed for the validation functionality above */}
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        {/* show alert if server response is bad */}
+        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+          Something went wrong with your signup!
+        </Alert>
 
-export default Signup;
+        <Form.Group>
+          <Form.Label htmlFor='username'>Username</Form.Label>
+          <Form.Control
+            type='text'
+            placeholder='Your username'
+            name='username'
+            onChange={handleInputChange}
+            value={userFormData.username}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Username is required!</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='email'>Email</Form.Label>
+          <Form.Control
+            type='email'
+            placeholder='Your email address'
+            name='email'
+            onChange={handleInputChange}
+            value={userFormData.email}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Email is required!</Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label htmlFor='password'>Password</Form.Label>
+          <Form.Control
+            type='password'
+            placeholder='Your password'
+            name='password'
+            onChange={handleInputChange}
+            value={userFormData.password}
+            required
+          />
+          <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
+        </Form.Group>
+        <Button
+          disabled={!(userFormData.username && userFormData.email && userFormData.password)}
+          type='submit'
+          variant='success'>
+          Submit
+        </Button>
+      </Form>
+    </>
+  );
+};
+
+export default SignupForm;
