@@ -2,11 +2,17 @@
     box-sizing: border-box;
     font-family: 'Shadows Into Light', cursive;
     color: black;
+<<<<<<< HEAD:client/src/pages/components/style.css
   } */
+=======
+    
+  }
+>>>>>>> main:src/pages/components/style.css
   
   .App {
     text-align: center;
   }
+
   .LinkList {
     color: rgb(155, 29, 29);
     padding: 0px 10px 0px 10px;
@@ -23,15 +29,25 @@
   }  
   
   .footer {
+<<<<<<< HEAD:client/src/pages/components/style.css
     background-color: rgb(39, 12, 12);
     /* position: fixed; */
+=======
+    background-color: rgb(56, 14, 14);
+    position:fixed;
+>>>>>>> main:src/pages/components/style.css
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 40px;
+    padding: 25px;
   }
   
-  .footer h4{
+  .footer p{
     color: white;
+    text-align: center;
+  }
+
+  .ms-auto{
+    margin-left: auto!important;
   }
   
