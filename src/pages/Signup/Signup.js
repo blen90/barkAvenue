@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
-<<<<<<< HEAD
-=======
-
->>>>>>> 5d6ee63be56c22155fe39e807acf57ef86e533ac
 import { createUser } from '../../utils/API';
 import Auth from '../../utils/auth';
 
@@ -109,11 +105,6 @@ const SignupForm = () => {
     </>
   );
 };
-<<<<<<< HEAD
-
-export default SignupForm;
-=======
 
 export default SignupForm;
 
->>>>>>> 5d6ee63be56c22155fe39e807acf57ef86e533ac
