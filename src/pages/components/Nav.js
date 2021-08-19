@@ -1,10 +1,12 @@
 import React from 'react';
 import { Nav } from 'reactstrap';
 import { NavLink } from "react-router-dom"
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const NavTabs = () => {
   return (
     <div className="NavBar">
-      <Nav >
+      <Nav>
         <NavLink className="LinkList" activeClassName="active" to="/about">
           About
         </NavLink>

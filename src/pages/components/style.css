@@ -2,11 +2,13 @@
     box-sizing: border-box;
     font-family: 'Shadows Into Light', cursive;
     color: black;
+    
   }
   
   .App {
     text-align: center;
   }
+
   .LinkList {
     color: rgb(155, 29, 29);
     padding: 0px 10px 0px 10px;
@@ -23,15 +25,20 @@
   }  
   
   .footer {
-    background-color: rgb(39, 12, 12);
-    position: fixed;
+    background-color: rgb(56, 14, 14);
+    position:fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 40px;
+    padding: 25px;
   }
   
-  .footer h4{
+  .footer p{
     color: white;
+    text-align: center;
+  }
+
+  .ms-auto{
+    margin-left: auto!important;
   }
   
