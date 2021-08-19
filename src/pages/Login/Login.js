@@ -61,12 +61,10 @@ const Login = (props) => {
         </FormGroup>
       
         <Button className="sub"> Submit </Button>
-        <p>I don't have account yet. <a href=""> Register Now </a></p> 
+        <p>I don't have account yet. <a href="/signup"> Register Now </a></p> 
       </div>
     </Form>
   );
 };
 
 export default Login;
-
-
