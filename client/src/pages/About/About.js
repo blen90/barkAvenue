@@ -1,39 +1,55 @@
 import React from "react";
-import { Container, Row, Col, CardImg } from "reactstrap";
+import { Container, Row, Col, Card } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./About.css";
-import AboutImg from './AboutImg.png';
+// import AboutImg from './AboutImg.png';
 
 export default function About() {
   return (
-    <div>
-      <Container className="About">
-        <Row>
-          <Col sm="6">
-            <h4>About US:</h4> 
-            eleifend quam adipiscing vitae proin sagittis nisl rhoncus
-            mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget
-            mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque
-            egestas congue quisque egestas diam in arcu cursus euismod quis
-            viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat
-            sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et
-            egestas quis ipsum suspendisse ultrices gravida dictum fusce ut
-            placerat orci nulla pellentesque dignissim enim sit amet venenatis
-            urna cursus eget nunc scelerisque viverra mauris in aliquam sem
-            fringilla ut morbi tincidunt augue interdum velit euismod
-          </Col>
+    <Container className="About">
+      <Row>
+      <Col md="12" sm="6">
+          <div className="container row">
+            <h2>About Us</h2>
+            <br></br>
+            <br></br>
+            <img src="/assets/images/furry5.jpg" className="furries col-8" alt="furry" />
+            <p className="bio col-4"> Welcome! We are tbd! We offer you the some pawsome options for your furries staycation while you are away! <br></br>
+            We offer different packages for your furryfriend's comfort and joy!!  Our pets bring so much joy to our lives and the lives of those around us.  They provide companionship, comfort, unwavering loyalty and commitment to their human owners.  It is only fair for us as humans to treat them the same.  At City Paws Pet Club, that is our mission statement.  We are committed to providing all pets with love, comfort, companionship and respect.  Come check us out and find out for yourself why we are the right hotel for your four-legged 
+            </p>
+          </div>
+        </Col>
+        <br></br>
+        <br></br>
+        
+        <br></br>
+        
+        <Col md="12" sm="6">
+          <div className="container row">
+            <h2>Facilities</h2>
+            <br></br>
+            <br></br>
+            <p className="bio col-4">
+             Our facilites are top notch for the comfort of your furryfriend and each furry gets their own space to sleep and they also have the option to play with other furries during their stay. 
+            <br></br>
+            <br></br>
+            We offer top quality food and treats to your furry and we have a big lot that is divided in areas where your dog can have a pawntastic time playing with other pets. 
+            </p>
+            <img src="/assets/images/furry4.jpg" className="furries col-8" alt="furry" />
+          </div>
+        </Col>
+        <Col md="12" sm="12">
+          <div className="container row">
+            <h2>Our Mission</h2>
+            <img src="/assets/images/about.jpg" className="furries col-8" alt="furry" />
+            <p className="bio col-4"> Bring your furries over so they are pampered while you're being pampered yourself!
+            </p>
+          </div>
+        </Col>
 
-          <Col sm="6">
-            <CardImg
-              src={AboutImg} 
-              className="petImage"
-              alt="petImage"
-            />
-          </Col>
-         
-        </Row>
+      </Row>
 
-      </Container>
-    </div>
+    </Container>
+
   );
 }
