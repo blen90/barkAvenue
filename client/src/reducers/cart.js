@@ -1,4 +1,4 @@
-import {ADD_TO_CART,CART_ITEM_UPDATE} from '../actions/cart';
+import {ADD_TO_CART,CART_ITEM_UPDATE,REMOVE_FROM_CART} from '../actions/cart';
 
 const initialState = {
     items: [
@@ -15,8 +15,11 @@ const cart = (state = initialState,action)=> {
             return receiveCartItemUpdate(state,action)
         default:
             return state;
+        case REMOVE_FROM_CART:
+            return removeFromCart(state,action);
     }
 }
+// 
 function receiveAddToCart(state,action) {
     let item = action.data;
     let items = state.items;
@@ -32,6 +35,16 @@ function receiveCartItemUpdate(state,action) {
         return {...item}
     });
     return {...state,items:[...items]}
+}
+
+function removeFromCart(state, action) {
+    let removeItem = state.items.filter((item) => {
+        return item.userId !== action.userId;
+    });
+    return {
+    ...state,
+    items: removeItem,
+  };
 }
 
 export default cart;

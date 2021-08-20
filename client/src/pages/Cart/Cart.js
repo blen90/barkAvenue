@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {CART_ITEM_UPDATE}  from '../../actions/cart'
+import {CART_ITEM_UPDATE,REMOVE_FROM_CART}  from '../../actions/cart'
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { Row, Form, FormGroup, Button , Label, Input  } from "reactstrap";
 import {connect} from "react-redux";
@@ -17,7 +17,6 @@ const Cart = (props) => {
 
     const onChangePackage = (userId,e) => {
         let valuePack = e.target.value;
-        console.log('package type *** ', valuePack);
 
         if(!updateCart[userId]) {
             updateCart[userId] = {}
@@ -29,9 +28,11 @@ const Cart = (props) => {
 
     const onSubmitEdit = (userId) => {
         let updateItem = updateCart[userId]
-        console.log('SUBMIT!!!', updateItem)
-        // dispatch updateItem
-        props.dispatch({type:'CART_ITEM_UPDATE',data:updateItem});
+        props.dispatch({type:CART_ITEM_UPDATE,data:updateItem});
+    }
+
+    const onRemoveItem = (userId) => {
+        props.dispatch({type:REMOVE_FROM_CART,userId});
     }
 
     const FORMAT = 'MM/dd/yyyy';
@@ -72,9 +73,20 @@ const Cart = (props) => {
                 <Button
                 onClick={()=>onSubmitEdit(userId)}
                 >Edit</Button>
+                <Button
+                onClick={()=>onRemoveItem(userId)}
+                >X</Button>  
             </FormGroup>
         )
     })
+
+    if(props.items.length === 0) {
+        return (
+        <div>
+            <h1>Cart is empty!</h1>
+        </div>
+        )
+    }
 
     return (
         <Row>
