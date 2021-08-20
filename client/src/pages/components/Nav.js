@@ -20,6 +20,9 @@ const NavTabs = () => {
         <NavLink className="LinkList" activeClassName="active" to="/contact">
           Contact
         </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/cart">
+          Cart
+        </NavLink>
         <NavLink className="LinkList" activeClassName="active" to="/login">
           Login
         </NavLink>

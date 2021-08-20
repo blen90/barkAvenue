@@ -1,65 +1,92 @@
+
 import React, { useState } from "react";
 // import { validateEmail } from '../../utils/helpers';
 import {Link } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import './Login.css';
 
-const Login = (props) => {
-  const [userName, setUserName] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+// see SignupForm.js for comments
+import React, { useState } from 'react';
+import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
 
-  const handleInputChange = (e) => {
-    // Getting the value and name of the input
-    const { target } = e;
-    const inputType = target.name;
-    const inputValue = target.value;
-    //Set the state to username and password based on the input type,
-    if (inputType === "userName") {
-      setUserName(inputValue);
-    } else {
-      setPassword(inputValue);
-    } 
+
+import { loginUser } from '../../utils/API';
+import Auth from '../../utils/auth';
+
+function LoginForm() {
+  const [userFormData, setUserFormData] = useState({ username: '', password: '' });
+  const [validated] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUserFormData({ ...userFormData, [name]: value });
   };
 
-  // const handleFormSubmit = (e) => {
-  //   e.preventDefault();
-  //   if (!validateEmail(userName) ||!validateEmail(userName))  {
-  //     setErrorMessage(" Wrong User Name or Password");
-  //     return;
-  //   }
-  //   setUserName("");
-  //   setPassword("");
-  // };
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    // check if form has everything (as per react-bootstrap docs)
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+
+    try {
+      const response = await loginUser(userFormData);
+
+      if (!response.ok) {
+        throw new Error('something went wrong!');
+      }
+
+      const { token, user } = await response.json();
+      console.log(user);
+      Auth.login(token);
+    } catch (err) {
+      console.error(err);
+      setShowAlert(true);
+    }
+
+    setUserFormData({
+      username: '',
+      email: '',
+      password: '',
+    });
+  };
 
   return (
-    <Form className="contact">
-      <div>
-        <h3> Login to your account:</h3>
-
-        <FormGroup className="label">
-          <Label for="name"> User Name: </Label>
+    <>
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+          Something went wrong with your login credentials!
+        </Alert>
+        <FormGroup>
+          <Label htmlFor='email'>Email</Label>
           <Input
-            type="text"
-            placeholder=" "
-            value={userName}
+            type='text'
+            placeholder='Your email'
+            name='email'
             onChange={handleInputChange}
-            name="userName"
+            value={userFormData.email}
             required
           />
+          <div className='invalid-feedback'>Email is required!</div>
         </FormGroup>
 
         <FormGroup>
-          <Label for="password"> Password: </Label>
+          <Label htmlFor='password'>Password</Label>
           <Input
-            type="password"
-            name="password"
-            placeholder="********"
-            value={password}
+            type='password'
+            placeholder='Your password'
+            name='password'
             onChange={handleInputChange}
+            value={userFormData.password}
             required
           />
+          <div className='invalid-feedback'>Password is required!</div>
         </FormGroup>
+
       
         <Button className="sub"> Submit </Button>
         <p>I don't have account yet. <Link underline="none" to={"/signup"}> Register Now </Link></p> 
@@ -69,3 +96,17 @@ const Login = (props) => {
 };
 
 export default Login;
+
+        <Button
+          disabled={!(userFormData.email && userFormData.password)}
+          type='submit'
+          variant='success'>
+          Submit
+        </Button>
+      </Form>
+    </>
+  );
+};
+
+export default LoginForm;
+
