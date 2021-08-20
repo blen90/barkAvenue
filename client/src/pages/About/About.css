@@ -10,9 +10,9 @@
     font-size: 1.25rem;
   }
   
-  .petImage {
-    width: 350px;
-    height: 500px;
+  .furries {
+    width: 50%;
+    height: auto;
     mix-blend-mode:multiply;
 
   }
@@ -21,3 +21,4 @@
     font-size: 1.75rem; 
     text-align: center;
   }
+

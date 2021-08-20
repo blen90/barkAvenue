@@ -11,7 +11,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <Container>
-        <Row col-12>
+        <Row md="12">
           <Col xs="6" sm="4">
             Lorem ipsum dolor sit amet Consectetur adipiscing elit Integer
             molestie lorem at massa Facilisis in pretium nisl aliquet Nulla
