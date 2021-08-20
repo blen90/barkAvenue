@@ -1,14 +1,10 @@
 
-import React, { useState } from "react";
-// import { validateEmail } from '../../utils/helpers';
-import {Link } from "react-router-dom";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
-import './Login.css';
-
-// see SignupForm.js for comments
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
+// import { validateEmail } from '../../utils/helpers';
+import {Link } from "react-router-dom";
 
+import './Login.css';
 
 import { loginUser } from '../../utils/API';
 import Auth from '../../utils/auth';
@@ -90,23 +86,24 @@ function LoginForm() {
       
         <Button className="sub"> Submit </Button>
         <p>I don't have account yet. <Link underline="none" to={"/signup"}> Register Now </Link></p> 
-      </div>
+   
     </Form>
-  );
-};
-
-export default Login;
-
-        <Button
-          disabled={!(userFormData.email && userFormData.password)}
-          type='submit'
-          variant='success'>
-          Submit
-        </Button>
-      </Form>
     </>
+
   );
-};
+}
+
+// export default Login;
+
+//         <Button
+//           disabled={!(userFormData.email && userFormData.password)}
+//           type='submit'
+//           variant='success'>
+//           Submit
+//         </Button>
+//     </>
+//   );
+// };
 
 export default LoginForm;
 
