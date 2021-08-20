@@ -30,7 +30,7 @@ export default function Footer() {
             <h6>Email Us: BarkAvenue@gmail.com</h6>
             <h6>Drop By: 300 N. Bark Ave, Minneapolis, MN, 55418</h6>
             <h6>Drop By: 8001 S. Bark Ave, Austin, TX, 73301</h6>
-            
+            <a href="https://github.com/blen90/barkAvenue"><img src="/assets/images/github.png"></img></a>
           </Col>
 
           <Col xs="12" sm="4">
