@@ -12,16 +12,23 @@ export default function Footer() {
     <div className="footer">
       <Container>
         <Row col-12>
-          <Col xs="6" sm="4">
-            Lorem ipsum dolor sit amet Consectetur adipiscing elit Integer
-            molestie lorem at massa Facilisis in pretium nisl aliquet Nulla
-            volutpat aliquam velit
+          <Col xs="6" sm="4" className="container text-center">
+            <img src="/assets/images/dogicon.png"  alt="dog"></img>
+            <br></br>
+            <h4>
+              Bark Avenue
+            </h4>
+            <h5>
+              Luxury Dog Hotel
+            </h5>
           </Col>
 
-          <Col xs="6" sm="4">
-            Lorem ipsum dolor sit amet Consectetur adipiscing elit Integer
-            molestie lorem at massa Facilisis in pretium nisl aliquet Nulla
-            volutpat aliquam velit
+          <Col xs="6" sm="4" className="container text-center"> 
+            <h6>Call Us: 612-BARK-AVE </h6>
+            <h6>Email Us: BarkAvenue@gmail.com</h6>
+            <h6>Drop By: 300 N. Bark Ave, Minneapolis, MN, 55418</h6>
+            <h6>Drop By: 8001 S. Bark Ave, Austin, TX, 73301</h6>
+            
           </Col>
 
           <Col xs="12" sm="4">
@@ -52,7 +59,7 @@ export default function Footer() {
             </Nav>
           </Col>
         </Row>
-        <p> Copyright &copy; Business Name Here</p> 
+        
       </Container>
     </div>
   );
