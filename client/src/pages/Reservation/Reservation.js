@@ -16,7 +16,6 @@ export default class Reservation extends React.Component {
     this.handleResetClick = this.handleResetClick.bind(this);
     this.state = this.getInitialState();
   }
-
   getInitialState() {
     return {
       from: undefined,

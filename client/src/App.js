@@ -8,7 +8,7 @@ import About from './pages/About/About';
 import Checkout from './pages/Checkout/Checkout';
 import Login from './pages/Login/Login.js';
 import Profile from './pages/Profile/Profile';
-import Services from './pages/Services/Services.js';
+// import Services from './pages/Services/Services.js';
 import Signup from './pages/Signup/Signup.js';
 import Contact from './pages/Contact/Contact.js';
 import Reservation from './pages/Reservation/Reservation.js'
@@ -45,7 +45,7 @@ class App extends Component {
              <Switch>
               {/* <Route exact path="/" component={About} /> */}
               <Route exact path="/" component={About} />
-              <Route exact path="/Services" component={Services} />
+              {/* <Route exact path="/Services" component={Services} /> */}
               <Route exact path="/About" component={About} />
               <Route exact path="/Checkout" component={Checkout} />
               <Route exact path="/Profile" component={Profile} />
