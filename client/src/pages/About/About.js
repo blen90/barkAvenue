@@ -6,7 +6,6 @@ import "./About.css";
 
 export default function About() {
   return (
-
     <Container className="About">
       <Row>
       <Col md="12" sm="6">
@@ -16,7 +15,7 @@ export default function About() {
             <br></br>
             <img src="/assets/images/about.jpg" className="furries col-8" alt="furry" />
             <p className="bio col-4"> Welcome! We are tbd! We offer you the some pawsome options for your furries staycation while you are away! <br></br>
-            We offer different packages for your furryfriend's comfort and joy!! 
+            We offer different packages for your furryfriend's comfort and joy!!  Our pets bring so much joy to our lives and the lives of those around us.  They provide companionship, comfort, unwavering loyalty and commitment to their human owners.  It is only fair for us as humans to treat them the same.  At City Paws Pet Club, that is our mission statement.  We are committed to providing all pets with love, comfort, companionship and respect.  Come check us out and find out for yourself why we are the right hotel for your four-legged 
             </p>
           </div>
         </Col>
