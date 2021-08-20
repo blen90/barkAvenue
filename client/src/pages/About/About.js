@@ -11,16 +11,7 @@ export default function About() {
         <Row>
           <Col sm="6">
             <h4>About US:</h4> 
-            eleifend quam adipiscing vitae proin sagittis nisl rhoncus
-            mattis rhoncus urna neque viverra justo nec ultrices dui sapien eget
-            mi proin sed libero enim sed faucibus turpis in eu mi bibendum neque
-            egestas congue quisque egestas diam in arcu cursus euismod quis
-            viverra nibh cras pulvinar mattis nunc sed blandit libero volutpat
-            sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et
-            egestas quis ipsum suspendisse ultrices gravida dictum fusce ut
-            placerat orci nulla pellentesque dignissim enim sit amet venenatis
-            urna cursus eget nunc scelerisque viverra mauris in aliquam sem
-            fringilla ut morbi tincidunt augue interdum velit euismod
+            Our pets bring so much joy to our lives and the lives of those around us.  They provide companionship, comfort, unwavering loyalty and commitment to their human owners.  It is only fair for us as humans to treat them the same.  At City Paws Pet Club, that is our mission statement.  We are committed to providing all pets with love, comfort, companionship and respect.  Come check us out and find out for yourself why we are the right hotel for your four-legged 
           </Col>
 
           <Col sm="6">
