@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Helmet from 'react-helmet';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
@@ -18,7 +17,7 @@ export default class Reservation extends React.Component {
     this.handleResetClick = this.handleResetClick.bind(this);
     this.state = this.getInitialState();
   }
-  
+
   getInitialState() {
     return {
       from: undefined,
@@ -39,13 +38,11 @@ export default class Reservation extends React.Component {
 
     console.log(from.toLocaleDateString())
     console.log(to.toLocaleDateString())
-    this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString())
-    
+    this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString());
     // this.setState(this.state);
   }
 
   render() {
-    
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };
     return (
@@ -77,9 +74,11 @@ export default class Reservation extends React.Component {
             </button>
             </>
           )}
+          
         </p>
-
-      </div>
+        <form>
+      </form>
+        </div>
         </>
     )
 }}
