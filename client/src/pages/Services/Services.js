@@ -108,8 +108,9 @@ export default function Display() {
             <CardTitle tag="h2" margin top="2%">{service.name}</CardTitle>
             <CardImg src={service.image} alt="furry" className="furry"/>
             <CardText>{service.description}</CardText>
+            <CardText>Price per night: {service.price} $</CardText>
             <Link underline="none" to={"/reservation"}>
-            <Button > {service.price}</Button> 
+            <Button > Click me to make a reservation</Button> 
             </Link>
           </Card>
         
