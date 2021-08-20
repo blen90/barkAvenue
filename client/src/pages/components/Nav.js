@@ -29,6 +29,9 @@ const NavTabs = () => {
         <NavLink className="LinkList" activeClassName="active" to="/signup">
           Signup
         </NavLink>
+        <NavLink className="LinkList" activeClassName="active" to="/logout">
+          Logout
+        </NavLink>
       </Nav>
     </div>
   );
