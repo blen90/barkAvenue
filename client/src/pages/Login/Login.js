@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 // import { validateEmail } from '../../utils/helpers';
+import {Link } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import './Login.css';
 
@@ -61,12 +62,10 @@ const Login = (props) => {
         </FormGroup>
       
         <Button className="sub"> Submit </Button>
-        <p>I don't have account yet. <a href=""> Register Now </a></p> 
+        <p>I don't have account yet. <Link underline="none" to={"/signup"}> Register Now </Link></p> 
       </div>
     </Form>
   );
 };
 
 export default Login;
-
-

@@ -3,8 +3,8 @@ import { Nav } from 'reactstrap';
 import { NavLink } from "react-router-dom"
 const NavTabs = () => {
   return (
-    <div className="NavBar">
-      <Nav >
+    <div className="NavBar" >
+      <Nav  className="justify-content-end" >
         <NavLink className="LinkList" activeClassName="active" to="/about">
           About
         </NavLink>
