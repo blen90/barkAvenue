@@ -3,6 +3,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
+import Services from '../Services/Services';
 
 export default class Reservation extends React.Component {
   static defaultProps = {
@@ -67,19 +68,19 @@ export default class Reservation extends React.Component {
                 ${to.toLocaleDateString()}`}{' '}
           {from && to && (
             <>
+             <div>  <Services/>  </div>     
             <button className="resetlink" onClick={this.handleResetClick}>
               Reset
             </button>
             <button className="savelink" onClick={()=>this.handleSaveClick(from, to)}>
-                Save
+                Add to Cart
             </button>
             </>
           )}
         </p>
-        <form>
-         
-      </form>
-        </div>
+
+      </div>
         </>
     )
 }}
+
