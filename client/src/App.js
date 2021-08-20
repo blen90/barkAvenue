@@ -18,6 +18,10 @@ import Footer from './pages/components/Footer';
 import Header from './pages/components/Header.js';
 import Nav from './pages/components/Nav.js';
 
+// redux
+import { Provider } from 'react-redux'
+import store from "./store";
+
 class App extends Component {
   // const ['reservation, setReservation'] = useState("");
   constructor(){
@@ -38,6 +42,7 @@ class App extends Component {
     console.log(this.state.from)
     return (
       <Router>
+        <Provider store={store}>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
           <Nav />
@@ -58,6 +63,7 @@ class App extends Component {
           </div>
           <Footer />
         </div>
+        </Provider>
       </Router>
     );
   }
