@@ -9,6 +9,7 @@ export default class Reservation extends React.Component {
   };
 
   constructor(props) {
+    console.log(props)
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
@@ -32,16 +33,19 @@ export default class Reservation extends React.Component {
     this.setState(this.getInitialState());
   }
 
-  handleSaveClick(value) {
-    
-    
-    this.setState(this.state);
+  handleSaveClick(from, to) {
+
+    console.log(from.toLocaleDateString())
+    console.log(to.toLocaleDateString())
+    this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString();
+    // this.setState(this.state);
   }
 
   render() {
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };
     return (
+      <>
       <div className="RangeExample">
           <DayPicker
           className="Selectable"
@@ -63,13 +67,15 @@ export default class Reservation extends React.Component {
             <button className="resetlink" onClick={this.handleResetClick}>
               Reset
             </button>
-            <button className="savelink" onClick={this.handleSaveClick}>
+            <button className="savelink" onClick={()=>this.handleSaveClick(from, to)}>
                 Save
             </button>
             </>
           )}
         </p>
-        
+        <form>
+      </form>
         </div>
+        </>
     )
 }}
