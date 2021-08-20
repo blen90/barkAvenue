@@ -25,7 +25,7 @@ export default function About() {
 
           <Col sm="6">
             <CardImg
-              src={AboutImg}
+              src={AboutImg} 
               className="petImage"
               alt="petImage"
             />
