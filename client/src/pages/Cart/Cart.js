@@ -1,17 +1,94 @@
-import React, {Component} from "react";
-import { CardText } from "reactstrap";
+import React, {useState} from "react";
+import {SUBMIT_CART}  from './acitons/cart'
+import DayPickerInput from 'react-day-picker/DayPickerInput';
+import { Row, Form, FormGroup, Button, Form , Label, Input  } from "reactstrap";
+import DayPicker, { DateUtils } from 'react-day-picker';
+import {connect} from "react-redux";
 
 export default function Cart(props){
-    console.log(props)
+    const [updateCart,setUpdateCart] = useState({});
+
+    const onChangeDate = (userId,e,type) => {
+        console.log('onchangedate',e);
+    }
+
+    const onChangePackage = (userId,e)=> {
+        let package = e.target.value
+        console.log('package type', package);
+
+        if(!updateCart[userId]) {
+            updateCart[userId] = {}
+        }
+
+        updateCart[userId] = {...updateCart[userId],package,userId}
+        setUpdateCart(updateCart);
+    }
+
+    const onSubmitEdit = (userId) => {
+        let updateItem = updateCart[userId]
+        // dispatch updateItem
+        // props.dispatch({type:'CART_ITEM_UPDATE',data:updateItem});
+    }
+
+    const FORMAT = 'MM/dd/yyyy';
+    const items = props.items.map( (
+        {package,dateFrom,dateTo,userId}
+        ,index) => {
+        return (
+            <FormGroup key={index} inline>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                    <Label for="cart-package" className="mr-sm-2">Package</Label>
+                    <Input
+                    type="select"
+                    name="select"
+                    id="exampleSelect"
+                    onChange={ e =>onChangePackage(userId,e)}
+                    value={package}>
+                        <option>Basic</option>
+                        <option>Premium</option>
+                        <option>Deluxe</option>
+                    </Input>
+                </FormGroup>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                    <Label className="mr-sm-2">From</Label>
+                    <DayPickerInput
+                        format={FORMAT}
+                        value={dateFrom}
+                        onDayChange={(e)=>onChangeDate(userId,e,'from')}
+                    />
+                </FormGroup>
+                <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
+                    <Label className="mr-sm-2">To</Label>
+                    <DayPickerInput
+                        format={FORMAT}
+                        value={dateTo}
+                        onDayChange={(e)=>onChangeDate(userId,e,'to')}
+                    />
+                </FormGroup>
+                <Button
+                onClick={()=>onSubmitEdit(userId)}
+                >Edit</Button>
+            </FormGroup>
+        )
+    })
+
     return (
-        <>
-        <h1>
-            In Cart!
-        </h1>
-        </>
+        <Row>
+            <Form>
+                {items}
+            </Form>
+        </Row>
     )
 
 }
+
+const mapStateToProps =(state) => {
+    return {...state.cart};
+};
+  
+export default connect( mapStateToProps )(Cart);
+
+
 
 // import React, { } from "react";
 // import { Container, Row, Col, Table, Card,  } from "reactstrap";
