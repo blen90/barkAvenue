@@ -74,6 +74,7 @@ export default class Reservation extends React.Component {
             </button>
             </>
           )}
+          
         </p>
         <form>
       </form>
