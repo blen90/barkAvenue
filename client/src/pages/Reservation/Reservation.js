@@ -37,7 +37,7 @@ export default class Reservation extends React.Component {
 
     console.log(from.toLocaleDateString())
     console.log(to.toLocaleDateString())
-    this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString();
+    this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString());
     // this.setState(this.state);
   }
 
