@@ -29,7 +29,7 @@ const SignupForm = () => {
 
     try {
       const response = await createUser(userFormData);
-
+      console.log(userFormData)
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
