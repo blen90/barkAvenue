@@ -9,7 +9,7 @@ export const getSingleUser= (token) => {
 };
 
 export const createUser = (userData) => {
-  return fetch('/api/users', {
+  return fetch('/api/users/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
