@@ -4,11 +4,11 @@
     color: black;
   } */
   
-  .App {
+.App {
     text-align: center;
   }
 
-  .LinkList {
+.LinkList {
     color: rgb(155, 29, 29);
     padding: 0px 10px 0px 10px;
     border-right: 1px solid black;
@@ -17,13 +17,13 @@
     text-decoration: none;
   }
   
-  .active{
+.active{
     color: rgb(11, 44, 230);
     font-weight: bold;
     text-decoration: underline;
   }  
   
-  .footer {
+.footer {
     background-color: rgb(56, 14, 14);
     margin-top: 10%;
     /* position: fixed;  */
@@ -32,9 +32,17 @@
     width: 100%;
     color: white;
   }
+
+.header {
+    background-color: rgb(56, 14, 14);
+    left: 0;
+    width: 100%;
+    color: white;
+    padding: 2%;
+}
   
-  .footer p{
+.footer p{
     padding-top: 3%;
     color: white;
     text-align: center;
-  }
+}
