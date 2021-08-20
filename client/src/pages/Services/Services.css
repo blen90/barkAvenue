@@ -3,34 +3,40 @@
     flex-wrap: wrap;
     margin-top:2%;
     margin-bottom:2%;
+ 
 }
 
-.card-body{
+.card{
     margin-left: 5%;
-    width: 35%;
-    height: 35%;
+    margin-right: 5%;
+    width: 100%;
+    height: 100%;
     text-align: center;
 }
 
-div.card-body {
+div.card {
+    margin-top: 25%;
     padding: 1%;
     border-radius: 3%;
     background-color: coral;
+    list-style: none;
+    text-decoration: none;
+
 }
 
 li {
     list-style: none;
 }
 
-.card-title {
+div.Card-title {
     margin-top: 2%;
 }
 
 .furry {
     margin-top: 2%;
     margin-bottom: 2%;
-    width: 80%;
-    height: 80%;
+    width: 100%;
+    height: 100%;
 }
 
 .furry:hover {

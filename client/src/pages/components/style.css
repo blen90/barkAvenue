@@ -7,6 +7,7 @@
   .App {
     text-align: center;
   }
+
   .LinkList {
     color: rgb(155, 29, 29);
     padding: 0px 10px 0px 10px;
@@ -17,21 +18,22 @@
   }
   
   .active{
-    color: rgb(40, 25, 177);
+    color: rgb(11, 44, 230);
     font-weight: bold;
     text-decoration: underline;
   }  
   
   .footer {
-    background-color: rgb(39, 12, 12);
-    /* position: fixed; */
+    background-color: rgb(56, 14, 14);
+    position: fixed; 
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 40px;
-  }
-  
-  .footer h4{
     color: white;
   }
   
+  .footer p{
+    padding-top: 3%;
+    color: white;
+    text-align: center;
+  }
