@@ -11,6 +11,7 @@ export default function Footer() {
   return (
     <div className="footer">
       <Container>
+
         <Row col-12>
           <Col xs="6" sm="4" className="container text-center">
             <img src="/assets/images/dogicon.png"  alt="dog"></img>
@@ -21,6 +22,7 @@ export default function Footer() {
             <h5>
               Luxury Dog Hotel
             </h5>
+
           </Col>
 
           <Col xs="6" sm="4" className="container text-center"> 
