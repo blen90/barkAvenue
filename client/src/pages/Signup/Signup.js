@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap'
+import "./Signup.css";
 
 import { createUser } from '../../utils/API';
 import Auth from '../../utils/auth';
@@ -52,7 +53,8 @@ const SignupForm = () => {
   };
 
   return (
-    <>
+    <div className="Container col-12
+     justify-content-center">
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
@@ -63,6 +65,7 @@ const SignupForm = () => {
         <Form.Group>
           <Form.Label htmlFor='username'>Username</Form.Label>
           <Form.Control
+            className="form"
             type='text'
             placeholder='Your username'
             name='username'
@@ -99,13 +102,14 @@ const SignupForm = () => {
           <Form.Control.Feedback type='invalid'>Password is required!</Form.Control.Feedback>
         </Form.Group>
         <Button
+          className="submit"
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
-          variant='success'>
+          >
           Submit
         </Button>
       </Form>
-    </>
+    </div>
   );
 };
 
