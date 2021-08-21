@@ -10,12 +10,12 @@ export default function About() {
       <Row>
       <Col md="12" sm="6">
           <div className="container row">
-            <h2>About Us</h2>
+          <h2>About Us</h2>
             <br></br>
             <br></br>
-            <img src="/assets/images/furry5.jpg" className="furries col-8" alt="furry" />
-            <p className="bio col-4"> Welcome! We are tbd! We offer you the some pawsome options for your furries staycation while you are away! <br></br>
-            We offer different packages for your furryfriend's comfort and joy!!  Our pets bring so much joy to our lives and the lives of those around us.  They provide companionship, comfort, unwavering loyalty and commitment to their human owners.  It is only fair for us as humans to treat them the same.  At City Paws Pet Club, that is our mission statement.  We are committed to providing all pets with love, comfort, companionship and respect.  Come check us out and find out for yourself why we are the right hotel for your four-legged 
+            <img src="/assets/images/furry5.jpg" className="furries col-8" alt="furry" />        
+            <p className="bio col-4"> Our pets bring so much joy to our lives and the lives of those around us.  They provide companionship, comfort, unwavering loyalty and commitment to their human owners.  It is only fair for us as humans to treat them the same. <br></br>
+            We offer different packages for your furryfriend's comfort and joy!!   
             </p>
           </div>
         </Col>
@@ -42,7 +42,7 @@ export default function About() {
           <div className="container row">
             <h2>Our Mission</h2>
             <img src="/assets/images/about.jpg" className="furries col-8" alt="furry" />
-            <p className="bio col-4"> Bring your furries over so they are pampered while you're being pampered yourself!
+            <p className="bio col-4"> At Bark Avenue Luxury Dog Hotel we are committed to providing all pets with love, comfort, companionship and respect.   
             </p>
           </div>
         </Col>

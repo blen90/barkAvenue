@@ -12,7 +12,7 @@ export default function Footer() {
     <div className="footer">
       <Container>
 
-        <Row col-12>
+        <Row md="12">
           <Col xs="6" sm="4" className="container text-center">
             <img src="/assets/images/dogicon.png"  alt="dog"></img>
             <br></br>

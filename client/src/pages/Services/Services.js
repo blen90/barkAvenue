@@ -8,7 +8,7 @@ const services = [
     name: "Basic Pawsome Stay ",
     image: "assets/images/furry.jpg",
     description: 
-      <ul>
+      <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Meals-A-Day-Provided! Bone Appetit!</li>
         <li>Daily trips to a pawsome park!</li>
@@ -27,7 +27,7 @@ const services = [
     name: "Premium Pawsome Stay ",
     image: "/assets/images/furry2.jpg",
     description: 
-      <ul>
+      <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Gourmet-Meals! Bone Appetit!</li>
         <li>Daily trips to a pawsome park!</li>
@@ -46,7 +46,7 @@ const services = [
     name: "Deluxe Pawsome Stay ",
     image: '/assets/images/furry3.jpg',
     description: 
-      <ul>
+      <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Gourmet-Meals! Bone Appetit!</li>
         <li>Daily trips to a pawsome park!</li>

@@ -29,11 +29,11 @@ export default function Props(props) {
                     <CardText>{props.description}</CardText>
                     <CardText>Price per night: {props.price} $</CardText>
                     <Link underline="none" to={"/reservation"}>
-                        <Input onChange={serviceUpdateUpdate} checked={serviceUpdate === (props.name)} className="form-check-input" type="checkbox" value={props.price} id="checkBox">
+                        <Input onChange={serviceUpdateUpdate} checked={serviceUpdate === (props.name)} className="form-check-input" type="checkbox" value={props.name} id="checkBox">
+                            </Input>
                             <Label className="form-check-label">
                                 {props.name}{props.price}
-                            </Label>
-                        </Input>
+                            </Label>             
                         <Button > Click me to make a reservation</Button>
                     </Link>
                 </Card>
