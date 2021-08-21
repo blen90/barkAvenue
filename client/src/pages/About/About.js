@@ -10,13 +10,14 @@ export default function About() {
       <Row>
       <Col md="12" sm="6">
           <div className="container row">
+
             <h2 className="text-center">About Us</h2>
             <br></br>
             <br></br>
             <img src="/assets/images/furry5.jpg" className="furries col-6" alt="furry" />
             <p className="bio col-6"> Welcome! We are Bark Avenue! We offer you the some pawsome options for your furries staycation while you are away! 
             We offer different packages for your furry friend's comfort and joy!!  Our pets bring so much joy to our lives and the lives of those around us.  They provide companionship, comfort, unwavering loyalty and commitment to their human owners.  It is only fair for us as humans to treat them the same.  At Bark Ave, that is our mission statement.  We are committed to providing all pets with love, comfort, companionship and respect.  Come check us out and find out for yourself why we are the right hotel for your four-legged family members.
-            </p>
+
           </div>
         </Col>
         <Col md="12" sm="6">
@@ -30,10 +31,12 @@ export default function About() {
         </Col>
         <Col md="12" sm="12">
           <div className="container row">
+
             <h2 className="text-center" >Our Mission</h2>
             <img src="/assets/images/about.jpg" className="furries col-6" alt="furry" />
             <p className="bio col-6"> Does your pooch deserve to be pampered? The SPA provides the most upscale and amazing full Grooming services, Anesthesia Free Teeth Cleaning, Rejuvenating Massages, Vitamin Baths, Pawdicures, Body Wraps, Aromatherapy and Calming Downtempo Music. Your pooch will enjoy the ultimate in 5-Star luxury throughout their very own special SPA day experience!
             Bark Avenue does require paper work for your pets that states that all of your pets vaccinations are up to date and signed by a veterinarian within the last 12 months. Failure to comply with our requirements will conclude in a canceled reservation. Thank you for your understanding.
+
             </p>
           </div>
         </Col>

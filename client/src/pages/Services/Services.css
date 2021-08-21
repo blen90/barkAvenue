@@ -1,29 +1,26 @@
+
+
 .container {
     display: inline-flexbox;
     flex-wrap: wrap;
     margin-top:2%;
     margin-bottom:2%;
- 
 }
 
 .card{
-    padding: 2%;
-    margin-left: 5%;
-    margin-right: 5%;
     width: 100%;
-    height: 100%;
+    height: 90%;
     text-align: center;
     margin-bottom: 5%;
 }
 
 div.card {
-    margin-top: 25%;
-    padding: 1%;
+    margin-top: 20%;
+    padding: 5%;
     border-radius: 3%;
-    background-color: coral;
+    background-color: rgb(56, 14, 14);
     list-style: none;
-    text-decoration: none;
-
+    color: white;
 }
 
 li {
@@ -41,8 +38,8 @@ div.Card-title {
     height: 100%;
 }
 
-.furry:hover {
+/* .furry:hover {
     transform: scale(1.2);
-}
+} */
 
 

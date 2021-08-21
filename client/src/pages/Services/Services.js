@@ -1,14 +1,15 @@
 import React from "react";
 import Props from "../components/Card";
-
+import { Row, Col } from "reactstrap";
 import "./Services.css";
+
 
 const services = [
   {
     name: "Basic Pawsome Stay ",
     image: "assets/images/furry.jpg",
     description: 
-      <ul>
+    <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Meals-A-Day-Provided! Bone Appetit!</li>
         <li>Daily trips to a pawsome park!</li>
@@ -27,7 +28,7 @@ const services = [
     name: "Premium Pawsome Stay ",
     image: "/assets/images/furry2.jpg",
     description: 
-      <ul>
+     <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Gourmet-Meals! Bone Appetit!</li>
         <li>Daily trips to a pawsome park!</li>
@@ -46,7 +47,7 @@ const services = [
     name: "Deluxe Pawsome Stay ",
     image: '/assets/images/furry3.jpg',
     description: 
-      <ul>
+      <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Gourmet-Meals! Bone Appetit!</li>
         <li>Daily trips to a pawsome park!</li>
@@ -60,15 +61,24 @@ const services = [
     price: 15,
     id: 3,
   },
-];
-
+  ];
 
 export default function Display() {
   return (
     <div>
-      {services.map((service) => (
-        <Props name={service.name} image={service.image} description={service.description} price={service.price} key={service.id} />
-      ))}
+      <Row>
+        {services.map((service) => (
+          <Col sm="12" md="4">
+            <Props
+              name={service.name}
+              image={service.image}
+              description={service.description}
+              price={service.price}
+              key={service.id}
+            />
+          </Col>
+        ))}
+      </Row>
     </div>
-);
-      }
+  );
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import emailjs from 'emailjs-com';
-
+import { Col } from "reactstrap";
 
 export default function Contact() {
 
@@ -18,7 +18,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="form col-12-lg col-6-md col-3-sm text-center">
+    <Col sm="12" md="4">
       <div className="form-container">
         <h2 className="title"> Howl you doin'? Leave your information with a message and we will collie you later </h2>
         <br></br>
@@ -36,6 +36,7 @@ export default function Contact() {
           <input className="submit-button btn-primary" type="submit" value="Send" />
         </form>
       </div>
-    </div>
+      </Col>
   );
+  
 }
