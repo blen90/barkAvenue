@@ -17,7 +17,7 @@ export default function About() {
             <img src="/assets/images/furry5.jpg" className="furries col-6" alt="furry" />
             <p className="bio col-6"> Welcome! We are Bark Avenue! We offer you the some pawsome options for your furries staycation while you are away! 
             We offer different packages for your furry friend's comfort and joy!!  Our pets bring so much joy to our lives and the lives of those around us.  They provide companionship, comfort, unwavering loyalty and commitment to their human owners.  It is only fair for us as humans to treat them the same.  At Bark Ave, that is our mission statement.  We are committed to providing all pets with love, comfort, companionship and respect.  Come check us out and find out for yourself why we are the right hotel for your four-legged family members.
-
+          </p>
           </div>
         </Col>
         <Col md="12" sm="6">
