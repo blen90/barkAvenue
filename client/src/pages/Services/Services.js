@@ -8,8 +8,7 @@ const services = [
   {
     name: "Basic Pawsome Stay ",
     image: "assets/images/furry.jpg",
-
-    description: (
+    description: 
     <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Meals-A-Day-Provided! Bone Appetit!</li>
@@ -20,8 +19,7 @@ const services = [
         <li>
           We will be your puparazzi! Pictures and 1 video sent to you daily
         </li>
-      </ul>
-    ),
+      </ul>,
     price: 5,
     id: 1,
   },
@@ -29,7 +27,7 @@ const services = [
   {
     name: "Premium Pawsome Stay ",
     image: "/assets/images/furry2.jpg",
-    description: (
+    description: 
      <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
         <li>3-Gourmet-Meals! Bone Appetit!</li>
@@ -41,14 +39,12 @@ const services = [
           We will be your puparazzi! Pictures and unlimited videos sent to you
           daily
         </li>
-      </ul>
-    ),
+      </ul>,
     price: 10,
     id: 2,
   },
   {
     name: "Deluxe Pawsome Stay ",
-
     image: '/assets/images/furry3.jpg',
     description: 
       <ul services-list-info-list="true">
@@ -61,12 +57,11 @@ const services = [
         <li>
           We will be your puparazzi! Puppy cam available 24/7 through our app!
         </li>
-      </ul>
-    ),
+      </ul>,
     price: 15,
     id: 3,
   },
-];
+  ];
 
 export default function Display() {
   return (
