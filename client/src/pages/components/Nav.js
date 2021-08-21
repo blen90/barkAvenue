@@ -11,9 +11,9 @@ const NavTabs = () => {
         <NavLink className="LinkList" activeClassName="active" to="/services">
           Services
         </NavLink>
-        <NavLink className="LinkList" activeClassName="active" to="/profile">
+        {/* <NavLink className="LinkList" activeClassName="active" to="/profile">
           Profile
-        </NavLink>
+        </NavLink> */}
         <NavLink className="LinkList" activeClassName="active" to="/reservation">
           Reservation
         </NavLink>
