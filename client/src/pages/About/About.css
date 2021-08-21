@@ -5,9 +5,10 @@
   }
   
   .About{
-    padding-top: 150px;
-    padding-bottom: 400px;
+    /* padding-top: 150px;
+    padding-bottom: 400px; */
     font-size: 1.25rem;
+    text-indent: 25px;
   }
   
   .furries {
@@ -17,8 +18,8 @@
 
   }
 
-  h4{
-    font-size: 1.75rem; 
+  h2{
+    font-size: 2.25rem; 
     text-align: center;
   }
 

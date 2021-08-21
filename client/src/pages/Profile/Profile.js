@@ -1,4 +1,12 @@
-
+import React from "react";
+import Reservation from '../Reservation/Reservation.js'
+export default function Profile() {
+    return (
+        <div>
+            <Reservation reservationInput={this.reservationInput} />
+        </div>
+    )
+}
 // import React, {Component} from 'react';
 // import axios from 'axios';
 // import ImageList from './DoggosImages'
