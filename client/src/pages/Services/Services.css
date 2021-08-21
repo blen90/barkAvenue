@@ -20,7 +20,7 @@ div.card {
     border-radius: 3%;
     background-color: rgb(56, 14, 14);
     list-style: none;
-    color: white;
+    /* color: white; */
 }
 
 li {
