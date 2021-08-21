@@ -5,6 +5,7 @@ import 'react-day-picker/lib/style.css';
 import Services from '../Services/Services';
 
 export default class Reservation extends React.Component {
+  
   static defaultProps = {
     numberOfMonths: 2,
   };
@@ -42,6 +43,8 @@ export default class Reservation extends React.Component {
     // this.setState(this.state);
   }
 
+  
+
   render() {
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };
@@ -74,9 +77,11 @@ export default class Reservation extends React.Component {
             </button>
             </>
           )}
-          
         </p>
         <form>
+          <div>
+            <reservationInput/>
+          </div>
       </form>
         </div>
         </>
