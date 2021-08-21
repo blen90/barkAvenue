@@ -34,6 +34,8 @@ function LoginForm() {
 
       if (!response.ok) {
         throw new Error('something went wrong!');
+      } else {
+        alert('Welcome! You have logged in!');
       }
 
       const { token, user } = await response.json();

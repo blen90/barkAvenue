@@ -32,6 +32,8 @@ const SignupForm = () => {
       console.log(userFormData)
       if (!response.ok) {
         throw new Error('something went wrong!');
+      } else {
+        alert('Welcome! You have signed up');
       }
 
       const { token, user } = await response.json();
