@@ -52,9 +52,8 @@ class App extends Component {
                 <Route exact path="/Services" component={Services} />
                 <Route exact path="/About" component={About} />
                 <Route exact path="/Checkout" component={Checkout} />
-                <Route exact path="/Profile" render={<Profile to={this.state.to} from={this.state.from}/>} />
                 <Route exact path="/Reservation" render={()=> <Reservation reservationInput={this.reservationInput}/>} />
-                <Route exact path="/Cart" render={<Cart to={this.state.to} from={this.state.from} /> } />
+                <Route exact path="/Cart" component={Cart} />
                 <Route exact path="/Contact" component={Contact} />
                 <Route exact path="/Login" component={Login} />
                 <Route exact path="/Signup" component={Signup} /> 
