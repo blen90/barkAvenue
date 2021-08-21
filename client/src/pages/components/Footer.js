@@ -13,8 +13,8 @@ export default function Footer() {
       <Container>
 
         <Row md="12">
-          <Col xs="6" sm="4" className="container text-center">
-            <img src="/assets/images/dogicon.png"  alt="dog"></img>
+          <Col xs="12" sm="4" className="container text-center">
+            <img src="/assets/images/dogicon.png"  alt="dog" className="doggie"></img>
             <br></br>
             <h4>
               Bark Avenue
@@ -25,37 +25,43 @@ export default function Footer() {
 
           </Col>
 
-          <Col xs="6" sm="4" className="container text-center"> 
+          <Col xs="12" sm="4" className="container text-center"> 
             <h6>Call Us: 612-BARK-AVE </h6>
             <h6>Email Us: BarkAvenue@gmail.com</h6>
             <h6>Drop By: 300 N. Bark Ave, Minneapolis, MN, 55418</h6>
             <h6>Drop By: 8001 S. Bark Ave, Austin, TX, 73301</h6>
-            <a href="https://github.com/blen90/barkAvenue"><img src="/assets/images/github.png"></img></a>
+              
+            <NavItem>
+                <NavLink href="https://github.com/blen90/barkAvenue" target="_blank" rel="norefferer">
+                  <FontAwesomeIcon icon={["fab", "github"]} size="4x" color="white" />
+                </NavLink>
+              </NavItem>
+          
           </Col>
 
-          <Col xs="12" sm="4">
-            <Nav className="justify-content-end">
+          <Col className="icons" xs="12" sm="4">
+            <Nav className="justify-content-center">
               <NavItem>
                 <NavLink href="mailto:">
-                  <FontAwesomeIcon icon={faEnvelope} size="lg" />
+                  <FontAwesomeIcon icon={faEnvelope} size="2x" color="white" />
                 </NavLink>
               </NavItem>
 
               <NavItem>
                 <NavLink href="tel:651.000.0000">
-                  <FontAwesomeIcon icon={faPhone} size="lg" />
+                  <FontAwesomeIcon icon={faPhone} size="2x" color="white" />
                 </NavLink>
               </NavItem>
 
               <NavItem>
                 <NavLink href="https://facebook.com">
-                  <FontAwesomeIcon icon={["fab", "facebook"]} size="lg" />
+                  <FontAwesomeIcon icon={["fab", "facebook"]} size="2x" color="white"  />
                 </NavLink>
               </NavItem>
 
               <NavItem>
                 <NavLink href="https://instagram.com">
-                  <FontAwesomeIcon icon={["fab", "instagram"]} size="lg" />
+                  <FontAwesomeIcon icon={["fab", "instagram"]} size="2x"  color="white" />
                 </NavLink>
               </NavItem>
             </Nav>

@@ -46,3 +46,22 @@
     color: white;
     text-align: center;
 }
+
+.icons {
+  margin-top: 5%;
+}
+
+.github {
+  height: 50%;
+  width: auto;
+  margin-top: 5%;
+}
+
+img.doggie {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+img.doggie1{
+  margin-top: 2%;
+}

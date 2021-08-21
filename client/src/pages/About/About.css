@@ -3,23 +3,30 @@
     padding-bottom: 30px;
     font-size: 1.5rem;
   }
+
+
   
-  .About{
+.About {
     /* padding-top: 150px;
     padding-bottom: 400px; */
     font-size: 1.25rem;
     text-indent: 25px;
   }
   
-  .furries {
+.furries {
     width: 50%;
     height: 50%;
     mix-blend-mode:multiply;
 
-  }
+}
 
-  h2{
+.h2 {
     font-size: 2.25rem; 
     text-align: center;
-  }
+    padding: 1%;
+    margin-bottom: 5%;
+    background-color: rgb(56, 14, 14);
+    color: white;
+    font-size: 50px;
+}
 
