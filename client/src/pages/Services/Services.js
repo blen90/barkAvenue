@@ -1,13 +1,14 @@
 import React from "react";
 import Props from "../components/Card";
-
+import { Row, Col } from "reactstrap";
 import "./Services.css";
+
 
 const services = [
   {
     name: "Basic Pawsome Stay ",
     image: "assets/images/furry.jpg",
-    description: 
+    description: (
       <ul>
         <li>Overnight pawsome stay</li>
         <li>3-Meals-A-Day-Provided! Bone Appetit!</li>
@@ -18,7 +19,8 @@ const services = [
         <li>
           We will be your puparazzi! Pictures and 1 video sent to you daily
         </li>
-      </ul>,
+      </ul>
+    ),
     price: 5,
     id: 1,
   },
@@ -26,7 +28,7 @@ const services = [
   {
     name: "Premium Pawsome Stay ",
     image: "/assets/images/furry2.jpg",
-    description: 
+    description: (
       <ul>
         <li>Overnight pawsome stay</li>
         <li>3-Gourmet-Meals! Bone Appetit!</li>
@@ -38,14 +40,15 @@ const services = [
           We will be your puparazzi! Pictures and unlimited videos sent to you
           daily
         </li>
-      </ul>,
+      </ul>
+    ),
     price: 10,
     id: 2,
   },
   {
     name: "Deluxe Pawsome Stay ",
-    image: '/assets/images/furry3.jpg',
-    description: 
+    image: "/assets/images/furry3.jpg",
+    description: (
       <ul>
         <li>Overnight pawsome stay</li>
         <li>3-Gourmet-Meals! Bone Appetit!</li>
@@ -56,19 +59,29 @@ const services = [
         <li>
           We will be your puparazzi! Puppy cam available 24/7 through our app!
         </li>
-      </ul>,
+      </ul>
+    ),
     price: 15,
     id: 3,
   },
 ];
 
-
 export default function Display() {
   return (
     <div>
-      {services.map((service) => (
-        <Props name={service.name} image={service.image} description={service.description} price={service.price} key={service.id} />
-      ))}
+      <Row>
+        {services.map((service) => (
+          <Col sm="12" md="4">
+            <Props
+              name={service.name}
+              image={service.image}
+              description={service.description}
+              price={service.price}
+              key={service.id}
+            />
+          </Col>
+        ))}
+      </Row>
     </div>
-);
-      }
+  );
+}
