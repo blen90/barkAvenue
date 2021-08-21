@@ -16,7 +16,7 @@ export default function Props(props) {
     setServiceUpdate(event.target.value);
   };
   console.log(serviceUpdate);
-
+  
   return (
     <Card key={props.id}>
       <CardTitle tag="h2" margin top="2%">

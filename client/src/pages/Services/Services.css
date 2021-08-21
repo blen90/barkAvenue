@@ -1,3 +1,5 @@
+
+
 .container {
     display: inline-flexbox;
     flex-wrap: wrap;
@@ -16,8 +18,9 @@ div.card {
     margin-top: 20%;
     padding: 5%;
     border-radius: 3%;
-    background-color: coral;
+    background-color: rgb(56, 14, 14);
     list-style: none;
+    color: white;
 }
 
 li {
@@ -35,8 +38,8 @@ div.Card-title {
     height: 100%;
 }
 
-.furry:hover {
+/* .furry:hover {
     transform: scale(1.2);
-}
+} */
 
 
