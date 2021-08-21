@@ -5,22 +5,20 @@ h3 {
 
 .contact {
   margin: 0% 10% 0% 15%;
-  padding-top: 100px;
+  padding-top: 200px;
   padding-bottom: 400px;
-  width: 70%;
+  width: 100%;
   font-size: 1.25rem;
   text-align: left;
 }
 
 Label {
-  font-size: 1.25rem;
+  font-size: 1.75rem;
 }
 
-input {
+Input {
   display: block;
-  width: 100%;
-  padding: 0.75rem;
-  margin: 1rem 0;
+  margin: 1rem 0rem 1rem 0rem;
   font-size: 1.5rem;
   border: 1px solid #484848;
   border-radius: 0.8rem;
@@ -28,7 +26,18 @@ input {
 
 Button {
   margin-top: 30px;
+  margin-bottom: 20px;
   padding: 10px;
   width: 100%;
   border-radius: 0.8rem;
 }
+
+.sub{
+  background-color: rgb(6, 87, 87);
+  font-size: 1.5rem;
+}
+
+P{
+  font-size: 1.25rem;
+}
+

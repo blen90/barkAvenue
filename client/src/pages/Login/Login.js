@@ -1,13 +1,11 @@
 
 import React, { useState } from 'react';
 import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
-// import { validateEmail } from '../../utils/helpers';
 import {Link } from "react-router-dom";
-
-import './Login.css';
-
 import { loginUser } from '../../utils/API';
 import Auth from '../../utils/auth';
+import { Col } from "reactstrap";
+import './Login.css';
 
 function LoginForm() {
   const [userFormData, setUserFormData] = useState({ username: '', password: '' });
@@ -54,13 +52,15 @@ function LoginForm() {
   };
 
   return (
-    <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+    <Col sm="12" md="8">
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit} className="contact">
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
           Something went wrong with your login credentials!
         </Alert>
+
+        <h3 className='login'> Login to your account : </h3>
         <FormGroup>
-          <Label htmlFor='email'>Email</Label>
+          <Label htmlFor='email'>Email:</Label>
           <Input
             type='text'
             placeholder='Your email'
@@ -73,7 +73,7 @@ function LoginForm() {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor='password'>Password</Label>
+          <Label htmlFor='password'>Password:</Label>
           <Input
             type='password'
             placeholder='Your password'
@@ -85,25 +85,22 @@ function LoginForm() {
           <div className='invalid-feedback'>Password is required!</div>
         </FormGroup>
 
-      
         <Button className="sub"> Submit </Button>
         <p>I don't have account yet. <Link underline="none" to={"/signup"}> Register Now </Link></p> 
    
-    </Form>
-    </>
-
+      </Form>
+    </Col>
   );
 }
 
 // export default Login;
-
-//         <Button
-//           disabled={!(userFormData.email && userFormData.password)}
-//           type='submit'
-//           variant='success'>
-//           Submit
-//         </Button>
-//     </>
+//   <Button
+//     disabled={!(userFormData.email && userFormData.password)}
+//     type='submit'
+//     variant='success'>
+//     Submit
+//   </Button>
+// </>
 //   );
 // };
 
