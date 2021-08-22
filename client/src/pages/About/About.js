@@ -1,8 +1,8 @@
 import React from "react";
-import { Container, Row, Col, Card } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./About.css";
-// import AboutImg from './AboutImg.png';
+
 
 export default function About() {
   return (

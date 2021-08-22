@@ -4,15 +4,14 @@ h3 {
 }
 
 .contact {
-  margin: 0% 10% 0% 15%;
-  padding-top: 200px;
-  padding-bottom: 400px;
+  padding-bottom: 20%;
   width: 100%;
   font-size: 1.25rem;
   text-align: left;
 }
 
 Label {
+  margin-top: 1%;
   font-size: 1.75rem;
 }
 
@@ -32,7 +31,7 @@ Button {
   border-radius: 0.8rem;
 }
 
-.sub{
+.sub {
   background-color: rgb(6, 87, 87);
   font-size: 1.5rem;
 }

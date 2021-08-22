@@ -1,6 +1,7 @@
 import React from "react";
 import Props from "../components/Card";
-import { Row, Col } from "reactstrap";
+import { Row, Col, Button } from "reactstrap";
+import { Link } from 'react-router-dom';
 import "./Services.css";
 
 
@@ -11,13 +12,14 @@ const services = [
     description: 
     <ul services-list-info-list="true">
         <li>Overnight pawsome stay</li>
-        <li>3-Meals-A-Day-Provided! Bone Appetit!</li>
+        <li>3-Meals-Provided! Bone Appetit!</li>
         <li>Daily trips to a pawsome park!</li>
         <li>Basic doggie bath</li>
         <li>Oppawtunity to play with same size dogs</li>
-        <li>Treats included! Bon A-pet-treat!</li>
+        <li>Gourmet treats included! Bon A-pet-treat!</li>
         <li>
-          We will be your puparazzi! Pictures and 1 video sent to you daily
+        We will be your puparazzi! Pictures and unlimited videos sent to you
+          daily
         </li>
       </ul>,
     price: 5,
@@ -79,6 +81,9 @@ export default function Display() {
           </Col>
         ))}
       </Row>
+      <Link underline="none" to={"/reservation"}>
+      <Button className="reservation text-center"> Ready? Click here to make a reservation! </Button>
+      </Link>
     </div>
   );
 }
