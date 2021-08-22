@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import {
     Card,
@@ -13,11 +13,16 @@ import {
 } from "reactstrap";
 
 export default function Props(props) {
-    const [serviceUpdate, setServiceUpdate] = useState(null);
-    const serviceUpdateUpdate = (event) => {
-        setServiceUpdate(event.target.value)
-    }
-    console.log(serviceUpdate);
+    // const [serviceUpdate, setServiceUpdate] = useState();
+    // const serviceUpdateUpdate = (event) => {
+    //     setServiceUpdate(event.target.value)
+    // }
+    // console.log('choice changed to', serviceUpdate);
+
+    // useEffect(() => {
+    //     console.log(serviceUpdate)
+    // }, [])
+
 
     return (
 
@@ -28,14 +33,14 @@ export default function Props(props) {
                     <CardImg src={props.image} alt="furry" className="furry" />
                     <CardBody>{props.description}</CardBody>
                     <CardBody>Price per night: {props.price} $</CardBody>
-                    <Link underline="none" to={"/reservation"}>
-                        <Input onChange={serviceUpdateUpdate} checked={serviceUpdate === (props.name)} className="form-check-input" type="checkbox" value={props.name}>
-                        </Input>
+                    {/* <Link underline="none" to={"/reservation"}> */}
+                        
+                        
                         {/* <Label className="form-check-label">
                             {props.name}
                         </Label> */}
-                        {/* <Button className="reservation"> Click me to make a reservation</Button> */}
-                    </Link>
+                        {/* <Button className="reservation"> Click me to make a reservation</Button>
+                    </Link> */}
                 </Card>
             </Col>
         </Row>
