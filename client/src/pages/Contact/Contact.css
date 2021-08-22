@@ -3,3 +3,13 @@
     background-color: rgb(6, 87, 87);
     color: white;
 }
+
+li{
+    margin-top: 2%;
+}
+
+.form-name, .form-email, .form-message, .submit-button {
+    margin-left: 25%;
+    margin-right: 25%;
+    width:50%;
+}

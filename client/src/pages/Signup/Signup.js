@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button, Alert } from 'react-bootstrap'
+import { Form, Button, Alert, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 import "./Signup.css";
 
 import { createUser } from '../../utils/API';
@@ -53,8 +54,7 @@ const SignupForm = () => {
   };
 
   return (
-    <div className="Container col-12
-     justify-content-center">
+    <Col sm="12" md="12" className="text-center">
       {/* This is needed for the validation functionality above */}
       <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
         {/* show alert if server response is bad */}
@@ -106,11 +106,11 @@ const SignupForm = () => {
           disabled={!(userFormData.username && userFormData.email && userFormData.password)}
           type='submit'
           >
-
           Submit
         </Button>
+        <p>Already have an account?<Link underline="none" to={"/login"}> Login now </Link></p> 
       </Form>
-    </div>
+    </Col>
   );
 };
 

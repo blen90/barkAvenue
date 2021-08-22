@@ -20,7 +20,7 @@ div.card {
     border-radius: 3%;
     background-color: rgb(56, 14, 14);
     list-style: none;
-    /* color: white; */
+    color: white;
 }
 
 li {
@@ -43,3 +43,12 @@ div.Card-title {
 } */
 
 
+.reservation {
+    background-color: rgb(6, 87, 87);
+    position:relative;
+    width: auto;
+}
+
+.reservation {
+    width: 100%;
+}

@@ -1,10 +1,9 @@
 
 import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button, Alert } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, Col, Alert } from 'reactstrap';
 import {Link } from "react-router-dom";
 import { loginUser } from '../../utils/API';
 import Auth from '../../utils/auth';
-import { Col } from "reactstrap";
 import './Login.css';
 
 function LoginForm() {
@@ -52,15 +51,16 @@ function LoginForm() {
   };
 
   return (
-    <Col sm="12" md="8">
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit} className="contact">
-        <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
-          Something went wrong with your login credentials!
-        </Alert>
+    <Col sm="12" md="12" className="text-center">
+      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+        {/* show alert if server response is bad */}
+        {/* <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant='danger'>
+          Something went wrong with your Login!
+        </Alert> */}
 
-        <h3 className='login'> Login to your account : </h3>
+        <h3 className='login'>Login to your account</h3>
         <FormGroup>
-          <Label htmlFor='email'>Email:</Label>
+          <Label htmlFor='email'>Email</Label>
           <Input
             type='text'
             placeholder='Your email'
@@ -73,7 +73,7 @@ function LoginForm() {
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor='password'>Password:</Label>
+          <Label htmlFor='password'>Password</Label>
           <Input
             type='password'
             placeholder='Your password'

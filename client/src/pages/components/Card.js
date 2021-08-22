@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 import {
     Card,
     CardImg,
-    CardText,
+    CardBody,
     CardTitle,
     Button,
     Input,
-    Label
+    Label,
+    Row,
+    Col
 } from "reactstrap";
-import { Container, Row, Col } from "reactstrap";
-
 
 export default function Props(props) {
     const [serviceUpdate, setServiceUpdate] = useState(null);
@@ -24,17 +24,17 @@ export default function Props(props) {
         <Row>
             <Col sm="12" md="12">
                 <Card key={props.id}>
-                    <CardTitle tag="h2" margin top="2%">{props.name}</CardTitle>
+                    <CardTitle><h2>{props.name}</h2></CardTitle>
                     <CardImg src={props.image} alt="furry" className="furry" />
-                    <CardText>{props.description}</CardText>
-                    <CardText>Price per night: {props.price} $</CardText>
+                    <CardBody>{props.description}</CardBody>
+                    <CardBody>Price per night: {props.price} $</CardBody>
                     <Link underline="none" to={"/reservation"}>
-                        <Input onChange={serviceUpdateUpdate} checked={serviceUpdate === (props.name)} className="form-check-input" type="checkbox" value={props.price} id="checkBox">
-                            <Label className="form-check-label">
-                                {props.name}{props.price}
-                            </Label>
+                        <Input onChange={serviceUpdateUpdate} checked={serviceUpdate === (props.name)} className="form-check-input" type="checkbox" value={props.name}>
                         </Input>
-                        <Button > Click me to make a reservation</Button>
+                        {/* <Label className="form-check-label">
+                            {props.name}
+                        </Label> */}
+                        {/* <Button className="reservation"> Click me to make a reservation</Button> */}
                     </Link>
                 </Card>
             </Col>

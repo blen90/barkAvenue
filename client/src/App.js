@@ -1,12 +1,10 @@
-import React, { Component, useState } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-
 import './App.css';
 
 import About from './pages/About/About';
 import Checkout from './pages/Checkout/Checkout';
 import Login from './pages/Login/Login.js';
-import Profile from './pages/Profile/Profile';
 import Services from './pages/Services/Services.js';
 import Signup from './pages/Signup/Signup.js';
 import Contact from './pages/Contact/Contact.js';
