@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Props from "../components/Card";
-import { Row, Col, Button } from "reactstrap";
+
+import { Row, Col, Button, Input } from "reactstrap";
 import { Link } from 'react-router-dom';
 import "./Services.css";
 
 
 const services = [
+  
   {
     name: "Basic Pawsome Stay ",
     image: "assets/images/furry.jpg",
@@ -66,6 +68,17 @@ const services = [
   ];
 
 export default function Display() {
+  const [serviceUpdate, setServiceUpdate] = useState(null);
+    const serviceUpdateUpdate = (event) => {
+        setServiceUpdate(event.target.value)
+    }
+    console.log('choice changed to', serviceUpdate);
+
+    useEffect(() => {
+        console.log(serviceUpdate)
+    }, [])
+
+
   return (
     <div>
       <Row>
@@ -78,10 +91,12 @@ export default function Display() {
               price={service.price}
               key={service.id}
             />
+            <Input onChange={serviceUpdateUpdate} checked={serviceUpdate === (service.name)} className="form-check-input" type="checkbox" value={service.name}></Input>
           </Col>
         ))}
-      </Row>
-      <Link underline="none" to={"/reservation"}>
+      </Row>                 
+      <h3>{serviceUpdate}</h3>
+      <Link underline="none" to={"/reservation"}>       
       <Button className="reservation text-center"> Ready? Click here to make a reservation! </Button>
       </Link>
     </div>
