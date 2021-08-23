@@ -5,10 +5,13 @@
 
 Bark Avenue is a website built for a pet hotel using Reactjs. With this react app the user can sign up, log in, set their pets name, check out the services offered, select a service, book a reservation, and add it to the cart. Bark Avenue is a luxury hotel for dogs with future plans of allowing cats and other four-legged friends.
 
-![screenshot](./client/public/assets/images/barkAvenue1.PNG) 
-![screenshot](./client/public/assets/images/barkAvenuecontact.PNG)
-![screenshot](./client/public/assets/images/barkAvenuelogin.PNG)
-![screenshot](./client/public/assets/images/barkAvenuesignup.PNG)
+![screenshot](./client/public/assets/images/aboutScreenshot.PNG) 
+![screenshot](./client/public/assets/images/servicesScreenshot.PNG)
+![screenshot](./client/public/assets/images/reservationScreenshot.PNG)
+![screenshot](./client/public/assets/images/contactScreenshot.PNG)
+![screenshot](./client/public/assets/images/signupScreenshot.PNG)
+![screenshot](./client/public/assets/images/loginScreenshot.PNG)
+![screenshot](./client/public/assets/images/cartScreenshot.PNG)
     
 # Table of Contents
 
