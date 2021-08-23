@@ -1,39 +1,53 @@
-import React from 'react';
-import { Nav } from 'reactstrap';
-import { NavLink } from "react-router-dom"
+import React, { useState } from 'react';
+// import { Nav, Modal, Navbar, Container } from 'reactstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Auth from '../../utils/auth';
+
 const NavTabs = () => {
+
   return (
-    <div className="NavBar" >
-      <Nav  className="justify-content-end" >
-        <NavLink className="LinkList" activeClassName="active" to="/about">
-          About
-        </NavLink>
-        <NavLink className="LinkList" activeClassName="active" to="/services">
-          Services
-        </NavLink>
-        {/* <NavLink className="LinkList" activeClassName="active" to="/profile">
-          Profile
-        </NavLink> */}
-        <NavLink className="LinkList" activeClassName="active" to="/reservation">
-          Reservation
-        </NavLink>
-        <NavLink className="LinkList" activeClassName="active" to="/contact">
-          Contact
-        </NavLink>
-        <NavLink className="LinkList" activeClassName="active" to="/cart">
-          Cart
-        </NavLink>
-        <NavLink className="LinkList" activeClassName="active" to="/login">
-          Login
-        </NavLink>
-        <NavLink className="LinkList" activeClassName="active" to="/signup">
-          Signup
-        </NavLink>
-        <NavLink className="LinkList" activeClassName="active" to="/logout">
-          Logout
-        </NavLink>
-      </Nav>
-    </div>
+    <>
+      <Navbar bg='dark' variant='dark' expand='lg'>
+        <Container fluid>
+          <Navbar.Brand as={Link} to='/'>
+            About
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls='navbar' />
+          <Navbar.Collapse id='navbar'>
+            <Nav className='ml-auto'>
+              <Nav.Link as={Link} to='/services'>
+                Services
+              </Nav.Link>
+              <Nav.Link as={Link} to='/contact'>
+                Contact
+              </Nav.Link>
+              {/* if user is logged in show saved books and logout */}
+              <Nav.Link as={Link} to='/login'>
+                Login
+              </Nav.Link>
+              {Auth.loggedIn() ? (
+                <>
+                  <Nav.Link as={Link} to='/reservation'>
+                    Reservation
+                  </Nav.Link>
+                  <Nav.Link as={Link} to='/cart'>
+                    Cart
+                  </Nav.Link>
+                  <Nav.Link onClick={Auth.logout}>Logout</Nav.Link>
+
+                </>
+              ) : (
+                <Nav.Link as={Link} to='/signup'>
+                  Signup
+                </Nav.Link>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </>
   );
 }
+
 export default NavTabs;

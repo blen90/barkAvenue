@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
+import { AppContext } from "./utils/AppContext"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -19,25 +20,47 @@ import Nav from './pages/components/Nav.js';
 import { Provider } from 'react-redux'
 import store from "./store";
 
-class App extends Component {
+const App = () => {
+  // constructor(){
+  //   super()
+  //   this.state = {
+  //     to: "", from: "",
+  //   }
+  //   this.reservationInput = this.reservationInput.bind(this)
+  // }
+  // reservationInput(from, to){
+  //   this.setState({
+  //     to: to, 
+  //     from: from,
+  //   })
+
+  const [ appState, setAppState ] = useState({})
+  const [ renderReady, setRenderReady ] = useState(false)
+
+  // Do whatever is needed to initialize application state
+  // Examples: check for logged in user
+  const buildAppState = async () => {
+    let fakeAppState = {
+      pet: { id: "76wefdw76dwgdw7dgw7", name: "Oso"}
+  }
+  setAppState(fakeAppState)
+  setRenderReady(true)
+}
+
+useEffect( () => {
+  buildAppState()
+}, [])
+
+
   // const ['reservation, setReservation'] = useState("");
-  constructor(){
-    super()
-    this.state = {
-      to: "", from: "",
-    }
-    this.reservationInput = this.reservationInput.bind(this)
-  }
-  reservationInput(from, to){
-    this.setState({
-      to: to, 
-      from: from,
-    })
-  }
-  render() {
-    console.log(this.state.to)
-    console.log(this.state.from)
+  
+  // render() {
+  //   console.log(this.state.to)
+  //   console.log(this.state.from)
     return (
+      <>
+      { renderReady === true && (
+        <AppContext.Provider value={ {appState, setAppState} }>
       <Router>
         <Provider store={store}>
           <div className="flex-column justify-flex-start min-100-vh">
@@ -45,12 +68,12 @@ class App extends Component {
             <Nav />
             <div className="container">
               <Switch>
-                {/* <Route exact path="/" component={About} /> */}
                 <Route exact path="/" component={About} />
                 <Route exact path="/Services" component={Services} />
                 <Route exact path="/About" component={About} />
                 <Route exact path="/Checkout" component={Checkout} />
-                <Route exact path="/Reservation" render={()=> <Reservation reservationInput={this.reservationInput}/>} />
+                <Route exact path="/Reservation" component={Reservation}/>
+                {/* <Route exact path="/Reservation" render={()=> <Reservation reservationInput={this.reservationInput}/>} /> */}
                 <Route exact path="/Cart" component={Cart} />
                 <Route exact path="/Contact" component={Contact} />
                 <Route exact path="/Login" component={Login} />
@@ -61,7 +84,10 @@ class App extends Component {
           </div>
         </Provider>
       </Router>
+      </AppContext.Provider>
+    )}
+    </>
     );
-  }
 }
+
 export default App;
