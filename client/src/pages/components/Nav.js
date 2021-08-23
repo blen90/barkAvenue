@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-// import { Nav, Modal, Navbar, Container } from 'reactstrap';
+import React from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';

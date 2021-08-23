@@ -5,16 +5,17 @@ import 'react-day-picker/lib/style.css';
 import Services from '../Services/Services';
 import {ADD_TO_CART}  from '../../actions/cart'
 import {connect} from "react-redux";
-import { loginUser } from '../../utils/API';
 import moment from 'moment';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class Reservation extends React.Component {
 
+  //Showing 2 months
   static defaultProps = {
     numberOfMonths: 2,
   };
 
+  //Setting up props to handle user clicks
   constructor(props) {
     console.log('reservation checking for user',props)
     super(props);
@@ -24,6 +25,7 @@ class Reservation extends React.Component {
     this.state = this.getInitialState();
   }
 
+  //Initial state of date set to undefined
   getInitialState() {
     return {
       from: undefined,
@@ -32,15 +34,18 @@ class Reservation extends React.Component {
     };
   }
 
+  //Handle user clicking on specific day 
   handleDayClick(day) {
     const range = DateUtils.addDayToRange(day, this.state);
     this.setState(range);
   }
 
+  //Reset function in case user doesn't want the dates they chose first
   handleResetClick() {
     this.setState(this.getInitialState());
   }
 
+  //Saving the user's choice for dates
   handleSaveClick(from, to) {
     let userId = this.props.user.userId || 1;
     let id = Math.floor(Math.random() * Date.now());
@@ -57,10 +62,12 @@ class Reservation extends React.Component {
     this.props.history.push( `${process.env.PUBLIC_URL}/cart` );
   }
 
+  //Changing the price for the service the user picked
   onChangeServiceName = ({name:serviceName,price}) => {
     this.setState({serviceName,price})
   };
 
+  //Rendering the user choices for dates
   render() {
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };

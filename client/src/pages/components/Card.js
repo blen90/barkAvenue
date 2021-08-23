@@ -9,7 +9,7 @@ import {
 } from "reactstrap";
 
 export default function Props(props) {
-    return (         
+    return (
         <Row>
             <Col sm="12" md="12">
                 <Card key={props.id}>
@@ -20,7 +20,6 @@ export default function Props(props) {
                 </Card>
             </Col>
         </Row>
-       
+
     )
 }
-                

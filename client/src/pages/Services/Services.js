@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Props from "../components/Card";
 import { useAppContext } from "../../utils/AppContext";
-import { Row, Col, Button, Input, Form } from "reactstrap";
+import { Row, Col, Button, Input } from "reactstrap";
 import { Link, withRouter } from 'react-router-dom';
 import "./Services.css";
 
@@ -81,7 +81,7 @@ function Display(props) {
     setServiceUpdate(service.name)
   }
 
-  const [formData, setFormData] = useState({ name: ""})
+  const [formData, setFormData] = useState({ name: "" })
   const [renderReady, setRenderReady] = useState(false)
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -99,7 +99,7 @@ function Display(props) {
 
   return (
     <div>
-     <>
+      <>
         {renderReady === true && (
           <>
             <form sm="12" md="4" onSubmit={handleFormSubmit}>
@@ -112,31 +112,30 @@ function Display(props) {
               </div>
             </form>
             <h2>Your reservation for: {appCtx.appState.pet.name}</h2>
-      <Row>
-        {services.map((service) => (
-          <Col sm="12" md="4">
-            <Props
-              name={service.name}
-              image={service.image}
-              description={service.description}
-              price={service.price}
-              key={service.id}
-            />
-            <Input
-              onChange={() => serviceUpdateUpdate(service)}
-              checked={serviceUpdate === (service.name)}
-              className="form-check-input"
-              type="checkbox"
-              value={service.name}
-            />
-          </Col>
-        ))}
-      </Row>
-      <h3>{serviceUpdate}</h3>
-      {props.match.path === "/Services" ? <Link underline="none" to={"/reservation"}>
-        <Button className="reservation text-center"> Ready? Click here to make a reservation! </Button>
-      </Link> : null}
-      </>
+            <Row>
+              {services.map((service, i) => (
+                <Col key={i} sm="12" md="4">
+                  <Props
+                    name={service.name}
+                    image={service.image}
+                    description={service.description}
+                    price={service.price}
+                  />
+                  <Input
+                    onChange={() => serviceUpdateUpdate(service)}
+                    checked={serviceUpdate === (service.name)}
+                    className="form-check-input"
+                    type="checkbox"
+                    value={service.name}
+                  />
+                </Col>
+              ))}
+            </Row>
+            <h3>{serviceUpdate}</h3>
+            {props.match.path === "/Services" ? <Link underline="none" to={"/reservation"}>
+              <Button className="reservation text-center"> Ready? Click here to make a reservation! </Button>
+            </Link> : null}
+          </>
         )}
       </>
     </div>
