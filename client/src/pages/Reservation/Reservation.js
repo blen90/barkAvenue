@@ -7,6 +7,7 @@ import {ADD_TO_CART}  from '../../actions/cart'
 import {connect} from "react-redux";
 import { loginUser } from '../../utils/API';
 import moment from 'moment';
+import { Link, withRouter } from 'react-router-dom';
 
 class Reservation extends React.Component {
 
@@ -53,6 +54,7 @@ class Reservation extends React.Component {
     let totalPrice = days * price
     // Math End
     this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price,totalPrice}})
+    this.props.history.push( `${process.env.PUBLIC_URL}/cart` );
   }
 
   onChangeServiceName = ({name:serviceName,price}) => {
@@ -113,4 +115,4 @@ const mapStateToProps = (state) => {
   // get userId in the state
   return {...state}
 }
-export default connect(mapStateToProps)(Reservation);
+export default withRouter(connect(mapStateToProps)(Reservation));
