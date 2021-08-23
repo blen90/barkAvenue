@@ -3,15 +3,20 @@ import Helmet from 'react-helmet';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import Services from '../Services/Services';
+import {ADD_TO_CART}  from '../../actions/cart'
+import {connect} from "react-redux";
+import { loginUser } from '../../utils/API';
+import moment from 'moment';
+import { Link, withRouter } from 'react-router-dom';
 
-export default class Reservation extends React.Component {
-  
+class Reservation extends React.Component {
+
   static defaultProps = {
     numberOfMonths: 2,
   };
 
   constructor(props) {
-    console.log(props)
+    console.log('reservation checking for user',props)
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
@@ -23,6 +28,7 @@ export default class Reservation extends React.Component {
     return {
       from: undefined,
       to: undefined,
+      serviceName: '',
     };
   }
 
@@ -36,14 +42,24 @@ export default class Reservation extends React.Component {
   }
 
   handleSaveClick(from, to) {
+    let userId = this.props.user.userId || 1;
+    let id = Math.floor(Math.random() * Date.now());
 
-    console.log(from.toLocaleDateString())
-    console.log(to.toLocaleDateString())
-    this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString());
-    // this.setState(this.state);
+    let dateFrom = moment(from).format('MM/DD/YY');
+    let dateTo = moment(to).format('MM/DD/YY');
+    // Math days to get Total price
+    let duration = moment.duration(moment(dateTo).diff(dateFrom));
+    let days = duration.asDays() + 1;
+    let {price} = this.state;
+    let totalPrice = days * price
+    // Math End
+    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price,totalPrice}})
+    this.props.history.push( `${process.env.PUBLIC_URL}/cart` );
   }
 
-  
+  onChangeServiceName = ({name:serviceName,price}) => {
+    this.setState({serviceName,price})
+  };
 
   render() {
     const { from, to } = this.state;
@@ -68,11 +84,18 @@ export default class Reservation extends React.Component {
                 ${to.toLocaleDateString()}`}{' '}
           {from && to && (
             <>
-             <div>  <Services/>  </div>     
+             <div>
+               <Services
+                onChangeService={this.onChangeServiceName}
+               />
+               </div>     
             <button className="resetlink" onClick={this.handleResetClick}>
               Reset
             </button>
-            <button className="savelink" onClick={()=>this.handleSaveClick(from, to)}>
+            <button
+            disabled={this.state.serviceName === ''}
+            className="savelink"
+            onClick={()=>this.handleSaveClick(from, to)}>
                 Add to Cart
             </button>
             </>
@@ -87,4 +110,9 @@ export default class Reservation extends React.Component {
         </>
     )
 }}
-
+const mapStateToProps = (state) => {
+  console.log('map to state',state)
+  // get userId in the state
+  return {...state}
+}
+export default withRouter(connect(mapStateToProps)(Reservation));

@@ -5,8 +5,10 @@ import {Link } from "react-router-dom";
 import { loginUser } from '../../utils/API';
 import Auth from '../../utils/auth';
 import './Login.css';
+import {connect} from 'react-redux';
+import { GET_USER } from '../../actions/user.js';
 
-function LoginForm() {
+function LoginForm(props) {
   const [userFormData, setUserFormData] = useState({ username: '', password: '' });
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
@@ -36,7 +38,8 @@ function LoginForm() {
       }
 
       const { token, user } = await response.json();
-      console.log(user);
+      props.dispatch({type:GET_USER,data:user})
+      console.log('login user ****',user);
       Auth.login(token);
     } catch (err) {
       console.error(err);
@@ -92,5 +95,20 @@ function LoginForm() {
   );
 }
 
-export default LoginForm;
+
+// export default Login;
+//   <Button
+//     disabled={!(userFormData.email && userFormData.password)}
+//     type='submit'
+//     variant='success'>
+//     Submit
+//   </Button>
+// </>
+//   );
+// };
+
+export default connect() (LoginForm);
+
+
+
 
