@@ -13,13 +13,13 @@ const cart = (state = initialState,action)=> {
             return receiveAddToCart(state,action)
         case CART_ITEM_UPDATE:
             return receiveCartItemUpdate(state,action)
-        default:
-            return state;
         case REMOVE_FROM_CART:
             return removeFromCart(state,action);
+        default:
+            return state;
     }
 }
-// 
+
 function receiveAddToCart(state,action) {
     let item = action.data;
     let items = state.items;

@@ -36,7 +36,7 @@ function LoginForm() {
       }
 
       const { token, user } = await response.json();
-      console.log(user);
+      console.log('login user ****',user);
       Auth.login(token);
     } catch (err) {
       console.error(err);
