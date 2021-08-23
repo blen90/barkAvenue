@@ -52,7 +52,7 @@ class Reservation extends React.Component {
     let {price} = this.state;
     let totalPrice = days * price
     // Math End
-    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price:totalPrice}})
+    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price,totalPrice}})
   }
 
   onChangeServiceName = ({name:serviceName,price}) => {

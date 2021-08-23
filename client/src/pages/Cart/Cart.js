@@ -18,7 +18,8 @@ const Cart = (props) => {
 
     const onChangePackage = (id,e) => {
         let serviceName = e.target.value;
-        props.dispatch({type:CART_ITEM_UPDATE,data:{id,serviceName}});
+        let price = Number(e.target.name);
+        props.dispatch({type:CART_ITEM_UPDATE,data:{id,serviceName,price}});
     }
 
     const onRemoveItem = (id) => {
@@ -27,7 +28,7 @@ const Cart = (props) => {
 
     const FORMAT = 'MM/dd/yyyy';
     const items = props.items.map( (
-        {serviceName,dateFrom,dateTo,id,price}
+        {serviceName,dateFrom,dateTo,id,totalPrice}
         ,index) => {
             console.log('serviceName ***',serviceName);
         return (
@@ -39,9 +40,9 @@ const Cart = (props) => {
                     name="select"
                     onChange={ e =>onChangePackage(id,e)}
                     value={serviceName}>
-                        <option value="Basic Pawsome Stay">Basic Pawsome Stay</option>
-                        <option value="Premium Pawsome Stay" >Premium Pawsome Stay</option>
-                        <option value="Deluxe Pawsome Stay" >Deluxe Pawsome Stay</option>
+                        <option name="5" value="Basic Pawsome Stay">Basic Pawsome Stay</option>
+                        <option name="10" value="Premium Pawsome Stay" >Premium Pawsome Stay</option>
+                        <option name="15" value="Deluxe Pawsome Stay" >Deluxe Pawsome Stay</option>
                     </Input>
                 </FormGroup>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
@@ -60,7 +61,7 @@ const Cart = (props) => {
                         onDayChange={(e)=>onChangeDate(id,e,'dateTo')}
                     />
                 </FormGroup>
-                <span>Price: {price}</span>
+                <span>Price: {totalPrice}</span>
                 <Button
                 onClick={()=>onRemoveItem(id)}
                 >X</Button>  
