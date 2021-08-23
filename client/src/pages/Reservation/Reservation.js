@@ -45,10 +45,12 @@ class Reservation extends React.Component {
     let id = Math.floor(Math.random() * Date.now());
 
     let dateFrom = moment(from).format('MM/DD/YY');
-
     let dateTo = moment(to).format('MM/DD/YY');
+    let duration = moment.duration(moment(dateTo).diff(dateFrom));
+    let days = duration.asDays() + 1;
     let {price} = this.state;
-    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price}})
+    let totalPrice = days * price
+    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price:totalPrice}})
   }
 
   onChangeServiceName = ({name:serviceName,price}) => {
