@@ -21,8 +21,11 @@ const Cart = (props) => {
         props.dispatch({type:REMOVE_FROM_CART,id});
     }
 
-    const onCheckOut = () => {
+    const onCheckOut = async() => {
         console.log('checkout!!')
+        // fetch your data to server side
+        
+        // clearing reducer data
         props.items.forEach(({id})=> {
             onRemoveItem(id)
         });
@@ -50,7 +53,7 @@ const Cart = (props) => {
                     </Input>
                 </FormGroup>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                    <Label className="mr-sm-2">From</Label>
+                    <Label className="mr-sm-2">From:</Label>
                     <DayPickerInput
                         format={FORMAT}
                         value={dateFrom}
@@ -58,17 +61,17 @@ const Cart = (props) => {
                     />
                 </FormGroup>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
-                    <Label className="mr-sm-2">To</Label>
+                    <Label className="mr-sm-2">To:</Label>
                     <DayPickerInput
                         format={FORMAT}
                         value={dateTo}
                         onDayChange={(e)=>onChangeDate(id,e,'dateTo')}
                     />
                 </FormGroup>
-                <span>Price: {totalPrice}</span>
+                <span>Price: ${totalPrice}</span>
                 <Button
                 onClick={()=>onRemoveItem(id)}
-                >X</Button>  
+                >Remove</Button>  
             </FormGroup>
         )
     })
@@ -89,7 +92,7 @@ const Cart = (props) => {
                 onClick={onCheckOut}
                 >Check out</Button>
             </Form>
-            <p>Total: {grandTotal}</p>
+            <p>Total: ${grandTotal}</p>
         </Row>
     )
 }
