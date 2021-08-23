@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button, Col, Alert } from 'reactstrap';
+import { Form, FormGroup, Label, Input, Button, Col, Alert} from 'reactstrap';
 import {Link } from "react-router-dom";
 import { loginUser } from '../../utils/API';
 import Auth from '../../utils/auth';
@@ -84,7 +84,6 @@ function LoginForm() {
           />
           <div className='invalid-feedback'>Password is required!</div>
         </FormGroup>
-
         <Button className="sub"> Submit </Button>
         <p>I don't have account yet. <Link underline="none" to={"/signup"}> Register Now </Link></p> 
    
@@ -92,17 +91,6 @@ function LoginForm() {
     </Col>
   );
 }
-
-// export default Login;
-//   <Button
-//     disabled={!(userFormData.email && userFormData.password)}
-//     type='submit'
-//     variant='success'>
-//     Submit
-//   </Button>
-// </>
-//   );
-// };
 
 export default LoginForm;
 
