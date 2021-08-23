@@ -3,9 +3,11 @@ import Helmet from 'react-helmet';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import Services from '../Services/Services';
+import {ADD_TO_CART}  from '../../actions/cart'
+import {connect} from "react-redux";
 
-export default class Reservation extends React.Component {
-  
+class Reservation extends React.Component {
+
   static defaultProps = {
     numberOfMonths: 2,
   };
@@ -23,11 +25,13 @@ export default class Reservation extends React.Component {
     return {
       from: undefined,
       to: undefined,
+      serviceName: '',
     };
   }
 
   handleDayClick(day) {
     const range = DateUtils.addDayToRange(day, this.state);
+    console.log('what is range',range)
     this.setState(range);
   }
 
@@ -36,14 +40,17 @@ export default class Reservation extends React.Component {
   }
 
   handleSaveClick(from, to) {
-
-    console.log(from.toLocaleDateString())
-    console.log(to.toLocaleDateString())
-    this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString());
+    console.log('what is reservatoininput',this.props.reservationInput)
+    // console.log(from.toLocaleDateString())
+    // console.log(to.toLocaleDateString())
+    // this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString());
     // this.setState(this.state);
+    this.props.dispatch({type:ADD_TO_CART,data:{...this.state}})
   }
 
-  
+  onChangeServiceName = (serviceName) => {
+    this.setState({serviceName})
+  };
 
   render() {
     const { from, to } = this.state;
@@ -68,11 +75,18 @@ export default class Reservation extends React.Component {
                 ${to.toLocaleDateString()}`}{' '}
           {from && to && (
             <>
-             <div>  <Services/>  </div>     
+             <div>
+               <Services
+                onChangeService={this.onChangeServiceName}
+               />
+               </div>     
             <button className="resetlink" onClick={this.handleResetClick}>
               Reset
             </button>
-            <button className="savelink" onClick={()=>this.handleSaveClick(from, to)}>
+            <button
+            disabled={this.state.serviceName === ''}
+            className="savelink"
+            onClick={()=>this.handleSaveClick(from, to)}>
                 Add to Cart
             </button>
             </>
@@ -88,3 +102,4 @@ export default class Reservation extends React.Component {
     )
 }}
 
+export default connect()(Reservation);

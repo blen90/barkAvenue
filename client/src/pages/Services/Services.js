@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import Props from "../components/Card";
 
 import { Row, Col, Button, Input } from "reactstrap";
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import "./Services.css";
 
 
@@ -67,17 +67,18 @@ const services = [
   },
   ];
 
-export default function Display() {
+function Display(props) {
+
   const [serviceUpdate, setServiceUpdate] = useState(null);
     const serviceUpdateUpdate = (event) => {
-        setServiceUpdate(event.target.value)
+        let serviceName = event.target.value
+        if(props.match.path === "/Reservation") {
+          if(props.onChangeService) {
+            props.onChangeService(serviceName)
+          }
+        }
+        setServiceUpdate(serviceName)
     }
-    console.log('choice changed to', serviceUpdate);
-
-    useEffect(() => {
-        console.log(serviceUpdate)
-    }, [])
-
 
   return (
     <div>
@@ -91,14 +92,22 @@ export default function Display() {
               price={service.price}
               key={service.id}
             />
-            <Input onChange={serviceUpdateUpdate} checked={serviceUpdate === (service.name)} className="form-check-input" type="checkbox" value={service.name}></Input>
+            <Input
+              onChange={serviceUpdateUpdate}
+              checked={serviceUpdate === (service.name)}
+              className="form-check-input"
+              type="checkbox"
+              value={service.name}
+            />
           </Col>
         ))}
       </Row>                 
       <h3>{serviceUpdate}</h3>
-      <Link underline="none" to={"/reservation"}>       
+      {props.match.path === "/Services" ? <Link underline="none" to={"/reservation"}>       
       <Button className="reservation text-center"> Ready? Click here to make a reservation! </Button>
-      </Link>
+      </Link> : null}
     </div>
   );
 }
+
+export default withRouter(Display)
