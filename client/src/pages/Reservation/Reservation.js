@@ -46,10 +46,12 @@ class Reservation extends React.Component {
 
     let dateFrom = moment(from).format('MM/DD/YY');
     let dateTo = moment(to).format('MM/DD/YY');
+    // Math days to get Total price
     let duration = moment.duration(moment(dateTo).diff(dateFrom));
     let days = duration.asDays() + 1;
     let {price} = this.state;
     let totalPrice = days * price
+    // Math End
     this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price:totalPrice}})
   }
 

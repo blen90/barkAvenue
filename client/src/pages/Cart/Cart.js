@@ -8,27 +8,17 @@ const Cart = (props) => {
     const [updateCart,setUpdateCart] = useState({});
 
     const onChangeDate = (id,date,type) => {
-        if(!updateCart[id]) {
-            updateCart[id] = {}
-        }
-        updateCart[id] = {...updateCart[id],[type]:date}
-        setUpdateCart(updateCart);
+        // if(!updateCart[id]) {
+        //     updateCart[id] = {}
+        // }
+        // updateCart[id] = {...updateCart[id],[type]:date}
+        // setUpdateCart(updateCart);
+        props.dispatch({type:CART_ITEM_UPDATE,data:{id,[type]:date}});
     }
 
     const onChangePackage = (id,e) => {
         let serviceName = e.target.value;
-
-        if(!updateCart[id]) {
-            updateCart[id] = {}
-        }
-
-        updateCart[id] = {...updateCart[id],serviceName}
-        setUpdateCart(updateCart);
-    }
-
-    const onSubmitEdit = (id) => {
-        let updateItem = updateCart[id]
-        props.dispatch({type:CART_ITEM_UPDATE,data:updateItem});
+        props.dispatch({type:CART_ITEM_UPDATE,data:{id,serviceName}});
     }
 
     const onRemoveItem = (id) => {
@@ -71,9 +61,6 @@ const Cart = (props) => {
                     />
                 </FormGroup>
                 <span>Price: {price}</span>
-                <Button
-                onClick={()=>onSubmitEdit(id)}
-                >Edit</Button>
                 <Button
                 onClick={()=>onRemoveItem(id)}
                 >X</Button>  
