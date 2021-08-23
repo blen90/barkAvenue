@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# barkAvenue
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/blen90/barkAvenue)
+  
+# Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bark Avenue is a website built for a pet hotel using Reactjs. With this react app the user can sign up, log in, set their pets name, check out the services offered, select a service, book a reservation, and add it to the cart. Bark Avenue is a luxury hotel for dogs with future plans of allowing cats and other four-legged friends.
 
-## Available Scripts
+![screenshot](./client/public/assets/images/barkAvenue1.PNG) 
+![screenshot](./client/public/assets/images/barkAvenuecontact.PNG)
+![screenshot](./client/public/assets/images/barkAvenuelogin.PNG)
+![screenshot](./client/public/assets/images/barkAvenuesignup.PNG)
+    
+# Table of Contents
 
-In the project directory, you can run:
+* [Installation](#installation)
+    
+* [Usage](#usage)
 
-### `npm start`
+* [License](#license)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* [Contributing](#contributing)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* [Technology](#Technology)
 
-### `npm test`
+* [Questions](#questions)
+    
+# Installation
+Clone the repo to your local machine.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run ```npm install``` to install dependencies.
 
-### `npm run build`
+Run ```npm start``` to start the application.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Usage
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Head to the signup page to register a new user. At any point the user can logout after creating an account. If not logged in but have created an account then login. View the services offered on the services page and select one, this will redirect you to the reservation page where you can select dates, then add to cart and checkout.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# License
 
-### `npm run eject`
+This application is covered by the MIT license.
+    
+# Contributing
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Contributors: Hewan Redie, Blenda Orellana, Yueshia (Cody) Vue, and Samuel Montague
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Technology
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+MongoDB 
+    - used to host the data. Built for modern application developers.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+React 
+    - website is built using react framework and components.
+    - State and Effect Hooks
+    - Context
 
-## Learn More
+CSS
+    -our main styling tool, with the addition of reactstrap for more seemless cohesion.
+    
+# Questions
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have any questions about the repo, open an issue or contact us directly at Hewan Redie:tewol22@gmail.com, Blenda Orellana: blen.or90@gmail.com, Yueshia Vue: YueshiaVue@gmail.com, Samuel Montague: SamuelpMontague@gmail.com. You can find more of our work at (https://github.com/blen90) (https://github.com/Tewol) (https://github.com/YueshiaVue) (https://github.com/SamuelMontague/).
