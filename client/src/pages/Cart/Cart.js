@@ -3,6 +3,7 @@ import {CART_ITEM_UPDATE,REMOVE_FROM_CART}  from '../../actions/cart'
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { Row, Form, FormGroup, Button , Label, Input  } from "reactstrap";
 import {connect} from "react-redux";
+import './cart.css';
 
 const Cart = (props) => {
     const [updateCart,setUpdateCart] = useState({});
@@ -67,7 +68,7 @@ const Cart = (props) => {
                 </FormGroup>
                 <span>Price: {totalPrice}</span>
                 <Button
-                onClick={()=>onRemoveItem(id)}
+                onClick={()=>onRemoveItem(id)} className="checkout"
                 >X</Button>  
             </FormGroup>
         )
@@ -87,7 +88,7 @@ const Cart = (props) => {
                 {items}
                 <Button
                 onClick={onCheckOut}
-                >Check out</Button>
+                className="checkout">Check out</Button>
             </Form>
             <p>Total: {grandTotal}</p>
         </Row>

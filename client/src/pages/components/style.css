@@ -8,20 +8,12 @@
     text-align: center;
   }
 
-.LinkList {
-    color: rgb(155, 29, 29);
+.linklist {
     padding: 0px 10px 0px 10px;
-    border-right: 1px solid black;
     font-size:1.25rem;
     font-weight: bold;
-    text-decoration: none;
+    background-color: #CD7F32;
   }
-  
-.active{
-    color: rgb(11, 44, 230);
-    font-weight: bold;
-    text-decoration: underline;
-  }  
   
 .footer {
     background-color: rgb(56, 14, 14);
@@ -64,3 +56,4 @@ img.doggie {
 img.doggie1{
   margin-top: 2%;
 }
+
