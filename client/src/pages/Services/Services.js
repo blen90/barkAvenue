@@ -68,8 +68,10 @@ const services = [
 ];
 
 function Display(props) {
+  //Using context
   const appCtx = useAppContext()
 
+  //Setting state for the service options
   const [serviceUpdate, setServiceUpdate] = useState(null);
   const serviceUpdateUpdate = service => {
     console.log('service', service);
@@ -81,6 +83,7 @@ function Display(props) {
     setServiceUpdate(service.name)
   }
 
+  //Setting up state for context for adding pet name
   const [formData, setFormData] = useState({ name: "" })
   const [renderReady, setRenderReady] = useState(false)
   const handleInputChange = (e) => {

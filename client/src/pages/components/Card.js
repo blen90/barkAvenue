@@ -8,6 +8,7 @@ import {
     Col
 } from "reactstrap";
 
+//Setting up props for services
 export default function Props(props) {
     return (
         <Row>

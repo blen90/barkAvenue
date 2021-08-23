@@ -5,6 +5,7 @@ import { Col, Form } from "reactstrap";
 
 export default function Contact() {
 
+  //Setting up emailjs to send email when user submits the form
   function sendEmail(e) {
     e.preventDefault();
 
