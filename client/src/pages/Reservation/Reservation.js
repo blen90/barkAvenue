@@ -6,6 +6,7 @@ import Services from '../Services/Services';
 import {ADD_TO_CART}  from '../../actions/cart'
 import {connect} from "react-redux";
 import { loginUser } from '../../utils/API';
+import moment from 'moment';
 
 class Reservation extends React.Component {
 
@@ -32,7 +33,6 @@ class Reservation extends React.Component {
 
   handleDayClick(day) {
     const range = DateUtils.addDayToRange(day, this.state);
-    console.log('what is range',range)
     this.setState(range);
   }
 
@@ -43,7 +43,12 @@ class Reservation extends React.Component {
   handleSaveClick(from, to) {
     let userId = this.props.user.userId || 1;
     let id = Math.floor(Math.random() * Date.now());
-    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id }})
+
+    let dateFrom = moment(from).format('MM/DD/YY');
+
+    let dateTo = moment(to).format('MM/DD/YY');
+    
+    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo}})
   }
 
   onChangeServiceName = (serviceName) => {

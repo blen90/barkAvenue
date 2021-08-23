@@ -3,7 +3,7 @@ import {ADD_TO_CART,CART_ITEM_UPDATE,REMOVE_FROM_CART} from '../actions/cart';
 const initialState = {
     items: [
         // example data
-        { userId:1, valuePack: 'basic', dateFrom: '8/1/21', dateTo: '8/2/21' }
+        { id:1, userId:1, valuePack: 'basic', dateFrom: '8/1/21', dateTo: '8/2/21' }
     ]
 }
 
