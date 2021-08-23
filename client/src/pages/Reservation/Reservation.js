@@ -5,6 +5,7 @@ import 'react-day-picker/lib/style.css';
 import Services from '../Services/Services';
 import {ADD_TO_CART}  from '../../actions/cart'
 import {connect} from "react-redux";
+import { loginUser } from '../../utils/API';
 
 class Reservation extends React.Component {
 
@@ -13,7 +14,7 @@ class Reservation extends React.Component {
   };
 
   constructor(props) {
-    console.log(props)
+    console.log('reservation checking for user',props)
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
@@ -40,12 +41,9 @@ class Reservation extends React.Component {
   }
 
   handleSaveClick(from, to) {
-    console.log('what is reservatoininput',this.props.reservationInput)
-    // console.log(from.toLocaleDateString())
-    // console.log(to.toLocaleDateString())
-    // this.props.reservationInput(from.toLocaleDateString(), to.toLocaleDateString());
-    // this.setState(this.state);
-    this.props.dispatch({type:ADD_TO_CART,data:{...this.state}})
+    let userId = this.props.user.userId || 1;
+    let id = Math.floor(Math.random() * Date.now());
+    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id }})
   }
 
   onChangeServiceName = (serviceName) => {
@@ -101,5 +99,9 @@ class Reservation extends React.Component {
         </>
     )
 }}
-
-export default connect()(Reservation);
+const mapStateToProps = (state) => {
+  console.log('map to state',state)
+  // get userId in the state
+  return {...state}
+}
+export default connect(mapStateToProps)(Reservation);
