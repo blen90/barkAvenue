@@ -1,7 +1,7 @@
 {
-  "name": "googlebooks-app",
+  "name": "barkavenue",
   "version": "1.0.0",
-  "description": "",
+  "description": "a react based site built for dog hotel.",
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js",
