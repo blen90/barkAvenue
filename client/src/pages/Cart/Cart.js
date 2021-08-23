@@ -8,11 +8,6 @@ const Cart = (props) => {
     const [updateCart,setUpdateCart] = useState({});
 
     const onChangeDate = (id,date,type) => {
-        // if(!updateCart[id]) {
-        //     updateCart[id] = {}
-        // }
-        // updateCart[id] = {...updateCart[id],[type]:date}
-        // setUpdateCart(updateCart);
         props.dispatch({type:CART_ITEM_UPDATE,data:{id,[type]:date}});
     }
 
@@ -26,11 +21,20 @@ const Cart = (props) => {
         props.dispatch({type:REMOVE_FROM_CART,id});
     }
 
+    const onCheckOut = () => {
+        console.log('checkout!!')
+        props.items.forEach(({id})=> {
+            onRemoveItem(id)
+        });
+    }
+
     const FORMAT = 'MM/dd/yyyy';
+    let grandTotal = 0;
     const items = props.items.map( (
         {serviceName,dateFrom,dateTo,id,totalPrice}
         ,index) => {
-            console.log('serviceName ***',serviceName);
+            
+        grandTotal += totalPrice;
         return (
             <FormGroup key={index} inline>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
@@ -81,7 +85,11 @@ const Cart = (props) => {
         <Row>
             <Form>
                 {items}
+                <Button
+                onClick={onCheckOut}
+                >Check out</Button>
             </Form>
+            <p>Total: {grandTotal}</p>
         </Row>
     )
 }
