@@ -16,13 +16,13 @@ const Cart = (props) => {
     }
 
     const onChangePackage = (id,e) => {
-        let valuePack = e.target.value;
+        let serviceName = e.target.value;
 
         if(!updateCart[id]) {
             updateCart[id] = {}
         }
 
-        updateCart[id] = {...updateCart[id],valuePack}
+        updateCart[id] = {...updateCart[id],serviceName}
         setUpdateCart(updateCart);
     }
 
@@ -37,8 +37,9 @@ const Cart = (props) => {
 
     const FORMAT = 'MM/dd/yyyy';
     const items = props.items.map( (
-        {valuePack,dateFrom,dateTo,id}
+        {serviceName,dateFrom,dateTo,id,price}
         ,index) => {
+            console.log('serviceName ***',serviceName);
         return (
             <FormGroup key={index} inline>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
@@ -46,12 +47,11 @@ const Cart = (props) => {
                     <Input
                     type="select"
                     name="select"
-                    id="exampleSelect"
                     onChange={ e =>onChangePackage(id,e)}
-                    value={valuePack}>
-                        <option>Basic</option>
-                        <option>Premium</option>
-                        <option>Deluxe</option>
+                    value={serviceName}>
+                        <option value="Basic Pawsome Stay">Basic Pawsome Stay</option>
+                        <option value="Premium Pawsome Stay" >Premium Pawsome Stay</option>
+                        <option value="Deluxe Pawsome Stay" >Deluxe Pawsome Stay</option>
                     </Input>
                 </FormGroup>
                 <FormGroup className="mb-2 mr-sm-2 mb-sm-0">
@@ -70,6 +70,7 @@ const Cart = (props) => {
                         onDayChange={(e)=>onChangeDate(id,e,'dateTo')}
                     />
                 </FormGroup>
+                <span>Price: {price}</span>
                 <Button
                 onClick={()=>onSubmitEdit(id)}
                 >Edit</Button>

@@ -9,7 +9,7 @@ import "./Services.css";
 const services = [
   
   {
-    name: "Basic Pawsome Stay ",
+    name: "Basic Pawsome Stay",
     image: "assets/images/furry.jpg",
     description: 
     <ul services-list-info-list="true">
@@ -29,7 +29,7 @@ const services = [
   },
 
   {
-    name: "Premium Pawsome Stay ",
+    name: "Premium Pawsome Stay",
     image: "/assets/images/furry2.jpg",
     description: 
      <ul services-list-info-list="true">
@@ -48,7 +48,7 @@ const services = [
     id: 2,
   },
   {
-    name: "Deluxe Pawsome Stay ",
+    name: "Deluxe Pawsome Stay",
     image: '/assets/images/furry3.jpg',
     description: 
       <ul services-list-info-list="true">
@@ -70,14 +70,14 @@ const services = [
 function Display(props) {
 
   const [serviceUpdate, setServiceUpdate] = useState(null);
-    const serviceUpdateUpdate = (event) => {
-        let serviceName = event.target.value
+    const serviceUpdateUpdate = service => {
+        console.log('service',service);
         if(props.match.path === "/Reservation") {
           if(props.onChangeService) {
-            props.onChangeService(serviceName)
+            props.onChangeService(service)
           }
         }
-        setServiceUpdate(serviceName)
+        setServiceUpdate(service.name)
     }
 
   return (
@@ -93,7 +93,7 @@ function Display(props) {
               key={service.id}
             />
             <Input
-              onChange={serviceUpdateUpdate}
+              onChange={()=>serviceUpdateUpdate(service)}
               checked={serviceUpdate === (service.name)}
               className="form-check-input"
               type="checkbox"

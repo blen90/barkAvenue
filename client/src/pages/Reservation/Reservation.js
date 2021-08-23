@@ -47,12 +47,12 @@ class Reservation extends React.Component {
     let dateFrom = moment(from).format('MM/DD/YY');
 
     let dateTo = moment(to).format('MM/DD/YY');
-    
-    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo}})
+    let {price} = this.state;
+    this.props.dispatch({type:ADD_TO_CART,data:{...this.state,userId,id,dateFrom,dateTo,price}})
   }
 
-  onChangeServiceName = (serviceName) => {
-    this.setState({serviceName})
+  onChangeServiceName = ({name:serviceName,price}) => {
+    this.setState({serviceName,price})
   };
 
   render() {

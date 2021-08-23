@@ -3,7 +3,7 @@ import {ADD_TO_CART,CART_ITEM_UPDATE,REMOVE_FROM_CART} from '../actions/cart';
 const initialState = {
     items: [
         // example data
-        { id:1, userId:1, valuePack: 'basic', dateFrom: '8/1/21', dateTo: '8/2/21' }
+        { id:1, userId:1, serviceName: 'Basic Pawsome Stay', dateFrom: '8/1/21', dateTo: '8/2/21', price: 5 }
     ]
 }
 
@@ -23,13 +23,13 @@ const cart = (state = initialState,action)=> {
 function receiveAddToCart(state,action) {
     let item = action.data;
     let items = state.items;
-    return {state,items: [...items,item]}
+    return {...state,items: [...items,item]}
 }
 
 function receiveCartItemUpdate(state,action) {
     let updateItem = action.data;
     let items = state.items.map( item => {
-        if(item.userId === updateItem.userId) {
+        if(item.id === updateItem.id) {
             return {...item,...updateItem}
         }
         return {...item}
@@ -39,7 +39,7 @@ function receiveCartItemUpdate(state,action) {
 
 function removeFromCart(state, action) {
     let removeItem = state.items.filter((item) => {
-        return item.userId !== action.userId;
+        return item.id !== action.id;
     });
     return {
     ...state,
