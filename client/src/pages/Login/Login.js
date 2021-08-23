@@ -61,34 +61,34 @@ function LoginForm(props) {
           Something went wrong with your Login!
         </Alert> */}
 
-        <h3 className='login'>Login to your account</h3>
+        <h3 className='login'>Please login to your account</h3>
         <FormGroup>
-          <Label htmlFor='email'>Email</Label>
           <Input
             type='text'
             placeholder='Your email'
             name='email'
             onChange={handleInputChange}
             value={userFormData.email}
+            placeholder="email"
             required
           />
           <div className='invalid-feedback'>Email is required!</div>
         </FormGroup>
 
         <FormGroup>
-          <Label htmlFor='password'>Password</Label>
           <Input
             type='password'
             placeholder='Your password'
             name='password'
             onChange={handleInputChange}
             value={userFormData.password}
+            placeholder="password"
             required
           />
           <div className='invalid-feedback'>Password is required!</div>
         </FormGroup>
-        <Button className="sub"> Submit </Button>
-        <p>I don't have account yet. <Link underline="none" to={"/signup"}> Register Now </Link></p> 
+        <Button className="sub"> LOGIN </Button>
+        <p>Don't have account yet? <Link underline="none" to={"/signup"}> Register Now </Link></p> 
    
       </Form>
     </Col>

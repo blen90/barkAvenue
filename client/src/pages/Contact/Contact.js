@@ -20,7 +20,7 @@ export default function Contact() {
 
   return (
     <Col sm="12" md="12" className="text-center">
-      <h2 className="title"> Howl you doin'?
+      <h2 className="title"> Howl you doin'?<br></br>
         Leave your information with a message and we will collie you later </h2>
       <Form className="justify-content-center" onSubmit={sendEmail}>
         <input type="hidden" name="contact_number" />
