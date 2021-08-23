@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import About from './pages/About/About';
-import Checkout from './pages/Checkout/Checkout';
 import Login from './pages/Login/Login.js';
 import Services from './pages/Services/Services.js';
 import Signup from './pages/Signup/Signup.js';
@@ -54,7 +53,6 @@ const App = () => {
                     <Route exact path="/" component={About} />
                     <Route exact path="/Services" component={Services} />
                     <Route exact path="/About" component={About} />
-                    <Route exact path="/Checkout" component={Checkout} />
                     <Route exact path="/Reservation" component={Reservation} />
                     <Route exact path="/Cart" component={Cart} />
                     <Route exact path="/Contact" component={Contact} />
