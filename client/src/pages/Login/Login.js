@@ -95,18 +95,6 @@ function LoginForm(props) {
   );
 }
 
-
-// export default Login;
-//   <Button
-//     disabled={!(userFormData.email && userFormData.password)}
-//     type='submit'
-//     variant='success'>
-//     Submit
-//   </Button>
-// </>
-//   );
-// };
-
 export default connect() (LoginForm);
 
 

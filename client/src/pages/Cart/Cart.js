@@ -6,22 +6,27 @@ import {connect} from "react-redux";
 import './cart.css';
 
 const Cart = (props) => {
+    //Setting state for Cart
     const [updateCart,setUpdateCart] = useState({});
 
+    //Adding date to state
     const onChangeDate = (id,date,type) => {
         props.dispatch({type:CART_ITEM_UPDATE,data:{id,[type]:date}});
     }
 
+    //Adding service to cart
     const onChangePackage = (id,e) => {
         let serviceName = e.target.value;
         let price = Number(e.target.name);
         props.dispatch({type:CART_ITEM_UPDATE,data:{id,serviceName,price}});
     }
 
+    //Removing items from cart
     const onRemoveItem = (id) => {
         props.dispatch({type:REMOVE_FROM_CART,id});
     }
 
+    //Check-out
     const onCheckOut = async() => {
         console.log('checkout!!')
         // fetch your data to server side
@@ -32,6 +37,7 @@ const Cart = (props) => {
         });
     }
 
+    //Setting format for date
     const FORMAT = 'MM/dd/yyyy';
     let grandTotal = 0;
     const items = props.items.map( (
