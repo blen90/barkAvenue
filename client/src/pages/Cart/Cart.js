@@ -1,12 +1,15 @@
 import React, {useState} from "react";
-import {CART_ITEM_UPDATE,REMOVE_FROM_CART}  from '../../actions/cart'
+import {CART_ITEM_UPDATE,REMOVE_FROM_CART, VIEW_CART}  from '../../actions/cart'
+import { withRouter } from 'react-router-dom';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { Row, Form, FormGroup, Button , Label, Input  } from "reactstrap";
 import {connect} from "react-redux";
+import Checkout from '../Checkout/Checkout'
 import './cart.css';
 
 const Cart = (props) => {
     //Setting state for Cart
+    const [popup, setPopUp] = useState("false")
     const [updateCart,setUpdateCart] = useState({});
 
     //Adding date to state
@@ -29,12 +32,8 @@ const Cart = (props) => {
     //Check-out
     const onCheckOut = async() => {
         console.log('checkout!!')
-        // fetch your data to server side
+        setPopUp("true")
         
-        // clearing reducer data
-        props.items.forEach(({id})=> {
-            onRemoveItem(id)
-        });
     }
 
     //Setting format for date
@@ -84,30 +83,48 @@ const Cart = (props) => {
             </FormGroup>
         )
     })
-
-    if(props.items.length === 0) {
+    console.log('this is props inside cart', props)
+    if(popup === "false"){
+        if(props.items.length === 0) {
+            return (
+            <div>
+                <h1>Cart is empty!</h1>
+            </div>
+            )
+        }
+    
         return (
-        <div>
-            <h1>Cart is empty!</h1>
-        </div>
+            <Row>
+                <Form>
+                    {items}
+                    <Button
+                    onClick={onCheckOut}
+                    className="checkout">Check out</Button>
+                </Form>
+                <p>Total: ${grandTotal}</p>
+            </Row>
+        )
+    } else {
+        return(
+            <Checkout cartItems={props.items} grandTotal= {grandTotal}/>
         )
     }
-
-    return (
-        <Row>
-            <Form>
-                {items}
-                <Button
-                onClick={onCheckOut}
-                className="checkout">Check out</Button>
-            </Form>
-            <p>Total: ${grandTotal}</p>
-        </Row>
-    )
+   
+    // return (
+    //     <Row>
+    //         <Form>
+    //             {items}
+    //             <Button
+    //             onClick={onCheckOut}
+    //             className="checkout">Check out</Button>
+    //         </Form>
+    //         <p>Total: ${grandTotal}</p>
+    //     </Row>
+    // )
 }
 
 const mapStateToProps =(state) => {
     return {...state.cart};
 };
   
-export default connect( mapStateToProps )(Cart);
+export default withRouter(connect( mapStateToProps )(Cart));

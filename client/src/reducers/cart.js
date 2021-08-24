@@ -1,4 +1,4 @@
-import {ADD_TO_CART,CART_ITEM_UPDATE,REMOVE_FROM_CART} from '../actions/cart';
+import {ADD_TO_CART,CART_ITEM_UPDATE,REMOVE_FROM_CART, VIEW_CART} from '../actions/cart';
 import moment from 'moment';
 
 const initialState = {
@@ -16,6 +16,8 @@ const cart = (state = initialState,action)=> {
             return receiveCartItemUpdate(state,action)
         case REMOVE_FROM_CART:
             return removeFromCart(state,action);
+        case VIEW_CART:
+            return {state};
         default:
             return state;
     }
