@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { Form, FormGroup, Label, Input, Button, Col, Alert} from 'reactstrap';
+import { Form, FormGroup, Input, Button, Col} from 'reactstrap';
 import {Link } from "react-router-dom";
 import { loginUser } from '../../utils/API';
 import Auth from '../../utils/auth';

@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {CART_ITEM_UPDATE,REMOVE_FROM_CART, VIEW_CART}  from '../../actions/cart'
+import {CART_ITEM_UPDATE,REMOVE_FROM_CART}  from '../../actions/cart'
 import { withRouter } from 'react-router-dom';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 import { Row, Form, FormGroup, Button , Label, Input  } from "reactstrap";
