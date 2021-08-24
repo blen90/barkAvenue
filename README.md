@@ -3,6 +3,8 @@
   
 # Description
 
+Deployment: https://bark-avenue.herokuapp.com/
+
 Bark Avenue is a website built for a pet hotel using Reactjs. With this react app the user can sign up, log in, set their pets name, check out the services offered, select a service, book a reservation, and add it to the cart. Bark Avenue is a luxury hotel for dogs with future plans of allowing cats and other four-legged friends.
 
 ![screenshot](./client/public/assets/images/aboutScreenshot.PNG) 
