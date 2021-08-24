@@ -10,6 +10,7 @@ import Signup from './pages/Signup/Signup.js';
 import Contact from './pages/Contact/Contact.js';
 import Reservation from './pages/Reservation/Reservation.js'
 import Cart from './pages/Cart/Cart.js'
+import Checkout from './pages/Checkout/Checkout';
 
 import Footer from './pages/components/Footer';
 import Header from './pages/components/Header.js';
@@ -55,6 +56,7 @@ const App = () => {
                     <Route exact path="/About" component={About} />
                     <Route exact path="/Reservation" component={Reservation} />
                     <Route exact path="/Cart" component={Cart} />
+                    <Route exact path="/Checkout" component={Checkout} />
                     <Route exact path="/Contact" component={Contact} />
                     <Route exact path="/Login" component={Login} />
                     <Route exact path="/Signup" component={Signup} />
