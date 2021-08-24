@@ -1,0 +1,21 @@
+.checkout-form.card {
+    width: 50%;
+    align-items: center;
+    padding:2%;
+    margin:0%;
+}
+
+
+.checkout-input {
+    width: 50%;
+  
+}
+
+.checkout-input1{
+    width: 40%;
+}
+
+.confirmation-payment{
+    background-color: rgb(6, 87, 87);
+    border: none;
+}
