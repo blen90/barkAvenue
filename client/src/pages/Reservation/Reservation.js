@@ -71,6 +71,8 @@ class Reservation extends React.Component {
   render() {
     const { from, to } = this.state;
     const modifiers = { start: from, end: to };
+
+    <Helmet/>
     return (
       <>
       <div className="RangeExample">
@@ -81,8 +83,8 @@ class Reservation extends React.Component {
           modifiers={modifiers}
           onDayClick={this.handleDayClick}
         />
-        <Helmet/>
-        <p>
+    
+        <div>
           {!from && !to && 'Please select the first day.'}
           {from && !to && 'Please select the last day.'}
           {from &&
@@ -107,12 +109,12 @@ class Reservation extends React.Component {
             </button>
             </>
           )}
-        </p>
-        <form>
+        </div>
+        {/* <form>
           <div>
             <reservationInput/>
           </div>
-      </form>
+      </form> */}
         </div>
         </>
     )

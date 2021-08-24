@@ -1,8 +1,6 @@
-import React, {useState} from "react";
-import { VIEW_CART}  from '../../actions/cart'
-import DayPickerInput from 'react-day-picker/DayPickerInput';
-import { Card, Form, FormGroup, Button , Label, Input } from "reactstrap";
-import {connect} from "react-redux";
+import React from "react";
+import { Card, Button, Input } from "reactstrap";
+
 import "./Checkout.css"
 
 
@@ -15,7 +13,7 @@ return (
     <h1>Checkout</h1>
     <br></br>
     {props.cartItems.map(eachCart => 
-        <div>
+        <div key={eachCart.id}>
         <h5>{eachCart.serviceName}</h5>
         <h5> Reservation From: {eachCart.dateFrom}</h5> 
        <h5> Reservation To: {eachCart.dateTo}</h5>  
