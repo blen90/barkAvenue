@@ -48,7 +48,7 @@ Head to the signup page to register a new user. At any point the user can logout
 
 This application is covered by the MIT license.
     
-# Contributing
+# Contributors
 
 Contributors: Hewan Redie, Blenda Orellana, Yueshia (Cody) Vue, and Samuel Montague
 
