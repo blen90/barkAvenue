@@ -57,3 +57,15 @@ img.doggie1{
   margin-top: 2%;
 }
 
+.doggie{
+  height: 30%;
+  width: auto;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: rgb(56, 14, 14);
+} 
+
+/* .navbar-brand {
+  color:aqua;
+} */ 
