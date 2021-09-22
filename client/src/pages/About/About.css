@@ -1,32 +1,39 @@
-
-.About p{
-    padding-bottom: 30px;
-    font-size: 1.5rem;
-  }
-
-
-  
-.About {
-    /* padding-top: 150px;
-    padding-bottom: 400px; */
-    font-size: 1.25rem;
-    text-indent: 25px;
-  }
-  
-.furries {
-    width: 50%;
-    height: 50%;
-    mix-blend-mode:multiply;
-
+img.furries {
+    align-self:center;
+    width: 75%;
+    height: auto;
+    margin-left:12.5%;
+    margin-left: 12.5;
+    padding:0%;
+    padding-bottom: 1%;
 }
 
+Container.About {
+  display: inline-block;
+  overflow-wrap: break-word;
+}
+
+p {
+  text-align: justify;
+}
+
+p.bio {
+  font-size: 20px;
+  display: inline-flex;
+  overflow-wrap: break-word;
+  margin-top: 5px;
+  padding-bottom: 1%;
+}
+
+div.info-img.row {
+  display: inline;
+
+} 
+
 .h2 {
-    font-size: 2.25rem; 
     text-align: center;
     padding: 1%;
     margin-bottom: 5%;
     background-color: rgb(56, 14, 14);
     color: white;
-    font-size: 50px;
 }
-
