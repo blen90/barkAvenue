@@ -1,7 +1,7 @@
 img.furries {
-    margin-left:12.5%;
-    margin-left: 12.5;
-    width: 75%;
+    margin-left:auto;
+    margin-left:auto;
+    max-width: 100%;
     height: auto;
     padding:0%;
     padding-bottom: 1%;
@@ -17,9 +17,7 @@ p {
 }
 
 p.bio {
-  font-size: 20px;
-  display: inline-flex;
-  overflow-wrap: break-word;
+  font-size: auto;
   margin-top: 5px;
   padding-bottom: 1%;
 }
