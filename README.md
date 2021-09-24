@@ -11,13 +11,24 @@ https://bark-avenue.herokuapp.com/
 
 ## Screenshots of the app
 
-![screenshot](./client/public/assets/images/aboutScreenshot.PNG) 
-![screenshot](./client/public/assets/images/servicesScreenshot.PNG)
-![screenshot](./client/public/assets/images/reservationScreenshot.PNG)
-![screenshot](./client/public/assets/images/contactScreenshot.PNG)
-![screenshot](./client/public/assets/images/signupScreenshot.PNG)
-![screenshot](./client/public/assets/images/loginScreenshot.PNG)
-![screenshot](./client/public/assets/images/cartScreenshot.PNG)
+
+### About page
+![screenshot](./client/public/assets/images/aboutus.jpg)
+### Signup page
+![screenshot](./client/public/assets/images/signup.jpg)
+### Login page
+![screenshot](./client/public/assets/images/login.jpg)
+### Services page
+![screenshot](./client/public/assets/images/services.jpg)
+### Reservations page
+![screenshot](./client/public/assets/images/reservation.jpg)
+![screenshot](./client/public/assets/images/reservation2.jpg)
+### Cart page
+![screenshot](./client/public/assets/images/cart.jpg)
+### Checkout page
+![screenshot](./client/public/assets/images/checkout.jpg)
+### Contact page
+![screenshot](./client/public/assets/images/contact.jpg)
     
 # Table of Contents
 
@@ -78,3 +89,4 @@ You can find more of our work at
 * https://github.com/Tewol
 * https://github.com/YueshiaVue
 * https://github.com/SamuelMontague/
+
