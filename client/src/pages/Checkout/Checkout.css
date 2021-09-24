@@ -1,18 +1,27 @@
-.checkout-form.card {
-    width: 50%;
-    align-items: center;
-    padding:2%;
-    margin:0%;
+.card{
+    max-width: 100%;
+    align-items: center;    
 }
 
+div.card{
+    margin-top: 3%;
+    padding: 1%;
+    margin-left:0%;
+}
 
 .checkout-input {
-    width: 50%;
-  
+    max-width: 70%; 
 }
 
+
 .checkout-input1{
-    width: 40%;
+    margin-right: 1%;
+    max-width: 35%;
+    display: inline;
+}
+
+.checkout-input2{
+    max-width: 50%;
 }
 
 .confirmation-payment{
