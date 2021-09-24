@@ -11,6 +11,7 @@ https://bark-avenue.herokuapp.com/
 
 ## Screenshots of the app
 
+
 ### About page
 ![screenshot](./client/public/assets/images/aboutus.jpg)
 ### Signup page
@@ -88,3 +89,4 @@ You can find more of our work at
 * https://github.com/Tewol
 * https://github.com/YueshiaVue
 * https://github.com/SamuelMontague/
+
